@@ -1,0 +1,30 @@
+D:\Dane\Metody programowania - Suchojad\Z2_14.05.2023_tomasz_dyda\Z2_14.05.2023_tomasz_dyda\bin\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.exe
+D:\Dane\Metody programowania - Suchojad\Z2_14.05.2023_tomasz_dyda\Z2_14.05.2023_tomasz_dyda\bin\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.deps.json
+D:\Dane\Metody programowania - Suchojad\Z2_14.05.2023_tomasz_dyda\Z2_14.05.2023_tomasz_dyda\bin\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.runtimeconfig.json
+D:\Dane\Metody programowania - Suchojad\Z2_14.05.2023_tomasz_dyda\Z2_14.05.2023_tomasz_dyda\bin\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.dll
+D:\Dane\Metody programowania - Suchojad\Z2_14.05.2023_tomasz_dyda\Z2_14.05.2023_tomasz_dyda\bin\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.pdb
+D:\Dane\Metody programowania - Suchojad\Z2_14.05.2023_tomasz_dyda\Z2_14.05.2023_tomasz_dyda\obj\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.csproj.AssemblyReference.cache
+D:\Dane\Metody programowania - Suchojad\Z2_14.05.2023_tomasz_dyda\Z2_14.05.2023_tomasz_dyda\obj\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dane\Metody programowania - Suchojad\Z2_14.05.2023_tomasz_dyda\Z2_14.05.2023_tomasz_dyda\obj\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.AssemblyInfoInputs.cache
+D:\Dane\Metody programowania - Suchojad\Z2_14.05.2023_tomasz_dyda\Z2_14.05.2023_tomasz_dyda\obj\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.AssemblyInfo.cs
+D:\Dane\Metody programowania - Suchojad\Z2_14.05.2023_tomasz_dyda\Z2_14.05.2023_tomasz_dyda\obj\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.csproj.CoreCompileInputs.cache
+D:\Dane\Metody programowania - Suchojad\Z2_14.05.2023_tomasz_dyda\Z2_14.05.2023_tomasz_dyda\obj\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.dll
+D:\Dane\Metody programowania - Suchojad\Z2_14.05.2023_tomasz_dyda\Z2_14.05.2023_tomasz_dyda\obj\Debug\net6.0\refint\Z2_14.05.2023_tomasz_dyda.dll
+D:\Dane\Metody programowania - Suchojad\Z2_14.05.2023_tomasz_dyda\Z2_14.05.2023_tomasz_dyda\obj\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.pdb
+D:\Dane\Metody programowania - Suchojad\Z2_14.05.2023_tomasz_dyda\Z2_14.05.2023_tomasz_dyda\obj\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.genruntimeconfig.cache
+D:\Dane\Metody programowania - Suchojad\Z2_14.05.2023_tomasz_dyda\Z2_14.05.2023_tomasz_dyda\obj\Debug\net6.0\ref\Z2_14.05.2023_tomasz_dyda.dll
+D:\Dane\Studia INF\Semestr II\MetodyProgramowania - Suchojad\zajecia4\Ćwiczenia\Z2_14.05.2023_tomasz_Dyda\Z2_14.05.2023_tomasz_dyda\bin\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.exe
+D:\Dane\Studia INF\Semestr II\MetodyProgramowania - Suchojad\zajecia4\Ćwiczenia\Z2_14.05.2023_tomasz_Dyda\Z2_14.05.2023_tomasz_dyda\bin\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.deps.json
+D:\Dane\Studia INF\Semestr II\MetodyProgramowania - Suchojad\zajecia4\Ćwiczenia\Z2_14.05.2023_tomasz_Dyda\Z2_14.05.2023_tomasz_dyda\bin\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.runtimeconfig.json
+D:\Dane\Studia INF\Semestr II\MetodyProgramowania - Suchojad\zajecia4\Ćwiczenia\Z2_14.05.2023_tomasz_Dyda\Z2_14.05.2023_tomasz_dyda\bin\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.dll
+D:\Dane\Studia INF\Semestr II\MetodyProgramowania - Suchojad\zajecia4\Ćwiczenia\Z2_14.05.2023_tomasz_Dyda\Z2_14.05.2023_tomasz_dyda\bin\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.pdb
+D:\Dane\Studia INF\Semestr II\MetodyProgramowania - Suchojad\zajecia4\Ćwiczenia\Z2_14.05.2023_tomasz_Dyda\Z2_14.05.2023_tomasz_dyda\obj\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.csproj.AssemblyReference.cache
+D:\Dane\Studia INF\Semestr II\MetodyProgramowania - Suchojad\zajecia4\Ćwiczenia\Z2_14.05.2023_tomasz_Dyda\Z2_14.05.2023_tomasz_dyda\obj\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dane\Studia INF\Semestr II\MetodyProgramowania - Suchojad\zajecia4\Ćwiczenia\Z2_14.05.2023_tomasz_Dyda\Z2_14.05.2023_tomasz_dyda\obj\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.AssemblyInfoInputs.cache
+D:\Dane\Studia INF\Semestr II\MetodyProgramowania - Suchojad\zajecia4\Ćwiczenia\Z2_14.05.2023_tomasz_Dyda\Z2_14.05.2023_tomasz_dyda\obj\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.AssemblyInfo.cs
+D:\Dane\Studia INF\Semestr II\MetodyProgramowania - Suchojad\zajecia4\Ćwiczenia\Z2_14.05.2023_tomasz_Dyda\Z2_14.05.2023_tomasz_dyda\obj\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.csproj.CoreCompileInputs.cache
+D:\Dane\Studia INF\Semestr II\MetodyProgramowania - Suchojad\zajecia4\Ćwiczenia\Z2_14.05.2023_tomasz_Dyda\Z2_14.05.2023_tomasz_dyda\obj\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.dll
+D:\Dane\Studia INF\Semestr II\MetodyProgramowania - Suchojad\zajecia4\Ćwiczenia\Z2_14.05.2023_tomasz_Dyda\Z2_14.05.2023_tomasz_dyda\obj\Debug\net6.0\refint\Z2_14.05.2023_tomasz_dyda.dll
+D:\Dane\Studia INF\Semestr II\MetodyProgramowania - Suchojad\zajecia4\Ćwiczenia\Z2_14.05.2023_tomasz_Dyda\Z2_14.05.2023_tomasz_dyda\obj\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.pdb
+D:\Dane\Studia INF\Semestr II\MetodyProgramowania - Suchojad\zajecia4\Ćwiczenia\Z2_14.05.2023_tomasz_Dyda\Z2_14.05.2023_tomasz_dyda\obj\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.genruntimeconfig.cache
+D:\Dane\Studia INF\Semestr II\MetodyProgramowania - Suchojad\zajecia4\Ćwiczenia\Z2_14.05.2023_tomasz_Dyda\Z2_14.05.2023_tomasz_dyda\obj\Debug\net6.0\ref\Z2_14.05.2023_tomasz_dyda.dll
