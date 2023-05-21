@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace StoreDataBase
 {
-    internal class Valve
+    public class Valve
     {
+        string _producent;
     }
 }

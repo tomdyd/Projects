@@ -28,3 +28,18 @@ D:\Dane\Studia INF\Semestr II\MetodyProgramowania - Suchojad\zajecia4\Ćwiczenia
 D:\Dane\Studia INF\Semestr II\MetodyProgramowania - Suchojad\zajecia4\Ćwiczenia\Z2_14.05.2023_tomasz_Dyda\Z2_14.05.2023_tomasz_dyda\obj\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.pdb
 D:\Dane\Studia INF\Semestr II\MetodyProgramowania - Suchojad\zajecia4\Ćwiczenia\Z2_14.05.2023_tomasz_Dyda\Z2_14.05.2023_tomasz_dyda\obj\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.genruntimeconfig.cache
 D:\Dane\Studia INF\Semestr II\MetodyProgramowania - Suchojad\zajecia4\Ćwiczenia\Z2_14.05.2023_tomasz_Dyda\Z2_14.05.2023_tomasz_dyda\obj\Debug\net6.0\ref\Z2_14.05.2023_tomasz_dyda.dll
+D:\Projects\Z2_14.05.2023_tomasz_Dyda\Z2_14.05.2023_tomasz_dyda\bin\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.exe
+D:\Projects\Z2_14.05.2023_tomasz_Dyda\Z2_14.05.2023_tomasz_dyda\bin\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.deps.json
+D:\Projects\Z2_14.05.2023_tomasz_Dyda\Z2_14.05.2023_tomasz_dyda\bin\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.runtimeconfig.json
+D:\Projects\Z2_14.05.2023_tomasz_Dyda\Z2_14.05.2023_tomasz_dyda\bin\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.dll
+D:\Projects\Z2_14.05.2023_tomasz_Dyda\Z2_14.05.2023_tomasz_dyda\bin\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.pdb
+D:\Projects\Z2_14.05.2023_tomasz_Dyda\Z2_14.05.2023_tomasz_dyda\obj\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.csproj.AssemblyReference.cache
+D:\Projects\Z2_14.05.2023_tomasz_Dyda\Z2_14.05.2023_tomasz_dyda\obj\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Z2_14.05.2023_tomasz_Dyda\Z2_14.05.2023_tomasz_dyda\obj\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.AssemblyInfoInputs.cache
+D:\Projects\Z2_14.05.2023_tomasz_Dyda\Z2_14.05.2023_tomasz_dyda\obj\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.AssemblyInfo.cs
+D:\Projects\Z2_14.05.2023_tomasz_Dyda\Z2_14.05.2023_tomasz_dyda\obj\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.csproj.CoreCompileInputs.cache
+D:\Projects\Z2_14.05.2023_tomasz_Dyda\Z2_14.05.2023_tomasz_dyda\obj\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.dll
+D:\Projects\Z2_14.05.2023_tomasz_Dyda\Z2_14.05.2023_tomasz_dyda\obj\Debug\net6.0\refint\Z2_14.05.2023_tomasz_dyda.dll
+D:\Projects\Z2_14.05.2023_tomasz_Dyda\Z2_14.05.2023_tomasz_dyda\obj\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.pdb
+D:\Projects\Z2_14.05.2023_tomasz_Dyda\Z2_14.05.2023_tomasz_dyda\obj\Debug\net6.0\Z2_14.05.2023_tomasz_dyda.genruntimeconfig.cache
+D:\Projects\Z2_14.05.2023_tomasz_Dyda\Z2_14.05.2023_tomasz_dyda\obj\Debug\net6.0\ref\Z2_14.05.2023_tomasz_dyda.dll
