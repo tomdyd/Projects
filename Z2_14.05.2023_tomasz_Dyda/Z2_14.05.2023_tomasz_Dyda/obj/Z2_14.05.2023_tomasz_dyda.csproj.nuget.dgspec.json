@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "D:\\gitRepositories\\Projects\\Z2_14.05.2023_tomasz_Dyda\\Z2_14.05.2023_tomasz_dyda\\Z2_14.05.2023_tomasz_dyda.csproj": {}
   },
   "projects": {
@@ -12,6 +13,19 @@
         "projectPath": "D:\\gitRepositories\\Projects\\Z2_14.05.2023_tomasz_Dyda\\Z2_14.05.2023_tomasz_dyda\\Z2_14.05.2023_tomasz_dyda.csproj",
         "packagesPath": "C:\\Users\\Tomek\\.nuget\\packages\\",
         "outputPath": "D:\\gitRepositories\\Projects\\Z2_14.05.2023_tomasz_Dyda\\Z2_14.05.2023_tomasz_dyda\\obj\\",
+=======
+    "D:\\Projects\\Z2_14.05.2023_tomasz_Dyda\\Z2_14.05.2023_tomasz_dyda\\Z2_14.05.2023_tomasz_dyda.csproj": {}
+  },
+  "projects": {
+    "D:\\Projects\\Z2_14.05.2023_tomasz_Dyda\\Z2_14.05.2023_tomasz_dyda\\Z2_14.05.2023_tomasz_dyda.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Projects\\Z2_14.05.2023_tomasz_Dyda\\Z2_14.05.2023_tomasz_dyda\\Z2_14.05.2023_tomasz_dyda.csproj",
+        "projectName": "Z2_14.05.2023_tomasz_dyda",
+        "projectPath": "D:\\Projects\\Z2_14.05.2023_tomasz_Dyda\\Z2_14.05.2023_tomasz_dyda\\Z2_14.05.2023_tomasz_dyda.csproj",
+        "packagesPath": "C:\\Users\\Tomek\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\Z2_14.05.2023_tomasz_Dyda\\Z2_14.05.2023_tomasz_dyda\\obj\\",
+>>>>>>> 449701e2f825a5b98aa3dd130d10f4a1bd08d9a7
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Tomek\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -55,7 +69,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
