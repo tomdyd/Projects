@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\StoreDataBase\\StoreDataBase\\StoreDataBase.csproj": {}
+    "D:\\gitRepositories\\Projects\\StoreDataBase\\StoreDataBase\\StoreDataBase.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\StoreDataBase\\StoreDataBase\\StoreDataBase.csproj": {
+    "D:\\gitRepositories\\Projects\\StoreDataBase\\StoreDataBase\\StoreDataBase.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\StoreDataBase\\StoreDataBase\\StoreDataBase.csproj",
+        "projectUniqueName": "D:\\gitRepositories\\Projects\\StoreDataBase\\StoreDataBase\\StoreDataBase.csproj",
         "projectName": "StoreDataBase",
-        "projectPath": "D:\\Projects\\StoreDataBase\\StoreDataBase\\StoreDataBase.csproj",
+        "projectPath": "D:\\gitRepositories\\Projects\\StoreDataBase\\StoreDataBase\\StoreDataBase.csproj",
         "packagesPath": "C:\\Users\\Tomek\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\StoreDataBase\\StoreDataBase\\obj\\",
+        "outputPath": "D:\\gitRepositories\\Projects\\StoreDataBase\\StoreDataBase\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Tomek\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.19.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -55,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
