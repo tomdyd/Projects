@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v6.0": {
       "StoreDataBase/1.0.0": {
         "dependencies": {
-          "MongoDB.Driver": "2.19.2"
+          "MongoDB.Driver": "2.19.2",
+          "MongoDataAccess": "1.0.0"
         },
         "runtime": {
           "StoreDataBase.dll": {}
@@ -160,6 +161,14 @@
             "fileVersion": "0.6.2.0"
           }
         }
+      },
+      "MongoDataAccess/1.0.0": {
+        "dependencies": {
+          "MongoDB.Driver.Core": "2.19.2"
+        },
+        "runtime": {
+          "MongoDataAccess.dll": {}
+        }
       }
     }
   },
@@ -287,6 +296,11 @@
       "sha512": "sha512-jPao/LdUNLUz8rn3H1D8W7wQbZsRZM0iayvWI4xGejJg3XJHT56gcmYdgmCGPdJF1UEBqUjucCRrFB+4HbJsbw==",
       "path": "zstdsharp.port/0.6.2",
       "hashPath": "zstdsharp.port.0.6.2.nupkg.sha512"
+    },
+    "MongoDataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

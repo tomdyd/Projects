@@ -282,6 +282,20 @@
         "runtime": {
           "lib/net6.0/ZstdSharp.dll": {}
         }
+      },
+      "MongoDataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "MongoDB.Driver": "2.19.2",
+          "MongoDB.Driver.Core": "2.19.2"
+        },
+        "compile": {
+          "bin/placeholder/MongoDataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MongoDataAccess.dll": {}
+        }
       }
     }
   },
@@ -743,11 +757,17 @@
         "zstdsharp.port.0.6.2.nupkg.sha512",
         "zstdsharp.port.nuspec"
       ]
+    },
+    "MongoDataAccess/1.0.0": {
+      "type": "project",
+      "path": "../MongoDataAccess/MongoDataAccess.csproj",
+      "msbuildProject": "../MongoDataAccess/MongoDataAccess.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "MongoDB.Driver >= 2.19.2"
+      "MongoDB.Driver >= 2.19.2",
+      "MongoDataAccess >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -776,7 +796,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\gitRepositories\\Projects\\StoreDataBase\\MongoDataAccess\\MongoDataAccess.csproj": {
+              "projectPath": "D:\\gitRepositories\\Projects\\StoreDataBase\\MongoDataAccess\\MongoDataAccess.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -810,7 +834,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

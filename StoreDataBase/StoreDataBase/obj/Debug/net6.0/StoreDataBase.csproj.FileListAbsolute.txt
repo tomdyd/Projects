@@ -33,3 +33,5 @@ D:\gitRepositories\Projects\StoreDataBase\StoreDataBase\obj\Debug\net6.0\refint\
 D:\gitRepositories\Projects\StoreDataBase\StoreDataBase\obj\Debug\net6.0\StoreDataBase.pdb
 D:\gitRepositories\Projects\StoreDataBase\StoreDataBase\obj\Debug\net6.0\StoreDataBase.genruntimeconfig.cache
 D:\gitRepositories\Projects\StoreDataBase\StoreDataBase\obj\Debug\net6.0\ref\StoreDataBase.dll
+D:\gitRepositories\Projects\StoreDataBase\StoreDataBase\bin\Debug\net6.0\MongoDataAccess.dll
+D:\gitRepositories\Projects\StoreDataBase\StoreDataBase\bin\Debug\net6.0\MongoDataAccess.pdb

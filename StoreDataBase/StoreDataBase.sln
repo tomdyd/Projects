@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreDataBase", "StoreDataBase\StoreDataBase.csproj", "{C04446BC-ADFB-4908-B4D5-E49C8EAF7A27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoreDataBase", "StoreDataBase\StoreDataBase.csproj", "{C04446BC-ADFB-4908-B4D5-E49C8EAF7A27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDataAccess", "MongoDataAccess\MongoDataAccess.csproj", "{FE727741-1369-4136-AE23-7548329AAA10}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{C04446BC-ADFB-4908-B4D5-E49C8EAF7A27}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C04446BC-ADFB-4908-B4D5-E49C8EAF7A27}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C04446BC-ADFB-4908-B4D5-E49C8EAF7A27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE727741-1369-4136-AE23-7548329AAA10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE727741-1369-4136-AE23-7548329AAA10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE727741-1369-4136-AE23-7548329AAA10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE727741-1369-4136-AE23-7548329AAA10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
