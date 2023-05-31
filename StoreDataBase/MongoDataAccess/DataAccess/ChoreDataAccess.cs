@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 namespace MongoDataAccess.DataAccess;
 public class ChoreDataAccess
 {
-    private const string ConnectionString = "mongodb://127.0.0.1:27017";
+    private const string ConnectionString = "mongodb+srv://tomdyd:tomdyd7583@cluster0.2ggdhx2.mongodb.net/";
     private const string DatabaseName = "choredb";
     private const string ChoreCollection = "chore_chart";
     private const string UserCollection = "users";

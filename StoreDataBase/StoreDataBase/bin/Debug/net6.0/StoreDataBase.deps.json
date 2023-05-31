@@ -164,6 +164,7 @@
       },
       "MongoDataAccess/1.0.0": {
         "dependencies": {
+          "MongoDB.Driver": "2.19.2",
           "MongoDB.Driver.Core": "2.19.2"
         },
         "runtime": {
