@@ -27,4 +27,6 @@ using MongoDataAccess.Models;
 
 ChoreDataAccess db = new ChoreDataAccess();
 
-await db.CreateUser(new UserModel { FirstName = "Tomasz", LastName = "Dyda" });
+//await db.CreateUser(new UserModel { FirstName = "Tomasz", LastName = "Dyda" });
+
+await db.CreateChore(new ChoreModel { ChoreText = "Sprzątanie", LastCompleted = DateTime.UtcNow });

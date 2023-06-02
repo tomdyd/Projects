@@ -1,0 +1,12 @@
+D:\gitRepositories\Projects\DataBase\StoreDataAccess\bin\Debug\net6.0\StoreDataAccess.deps.json
+D:\gitRepositories\Projects\DataBase\StoreDataAccess\bin\Debug\net6.0\StoreDataAccess.dll
+D:\gitRepositories\Projects\DataBase\StoreDataAccess\bin\Debug\net6.0\StoreDataAccess.pdb
+D:\gitRepositories\Projects\DataBase\StoreDataAccess\obj\Debug\net6.0\StoreDataAccess.csproj.AssemblyReference.cache
+D:\gitRepositories\Projects\DataBase\StoreDataAccess\obj\Debug\net6.0\StoreDataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\gitRepositories\Projects\DataBase\StoreDataAccess\obj\Debug\net6.0\StoreDataAccess.AssemblyInfoInputs.cache
+D:\gitRepositories\Projects\DataBase\StoreDataAccess\obj\Debug\net6.0\StoreDataAccess.AssemblyInfo.cs
+D:\gitRepositories\Projects\DataBase\StoreDataAccess\obj\Debug\net6.0\StoreDataAccess.csproj.CoreCompileInputs.cache
+D:\gitRepositories\Projects\DataBase\StoreDataAccess\obj\Debug\net6.0\StoreDataAccess.dll
+D:\gitRepositories\Projects\DataBase\StoreDataAccess\obj\Debug\net6.0\refint\StoreDataAccess.dll
+D:\gitRepositories\Projects\DataBase\StoreDataAccess\obj\Debug\net6.0\StoreDataAccess.pdb
+D:\gitRepositories\Projects\DataBase\StoreDataAccess\obj\Debug\net6.0\ref\StoreDataAccess.dll

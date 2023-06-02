@@ -18,7 +18,7 @@ public class ChoreDataAccess
         return db.GetCollection<T>(collection);
     }
 
-    private async Task<List<UserModel>> GetAllUsers()
+    public async Task<List<UserModel>> GetAllUsers()
     {
         var usersCollection = ConnectToMongo<UserModel>(UserCollection);
         var results = await usersCollection.FindAsync(_ => true);
