@@ -11,6 +11,8 @@ using MongoDB.Bson.Serialization.IdGenerators;
 namespace StoreDataAccess.Models;
 public abstract class Model
 {
+    [BsonId]
+    [BsonRepresentation(BsonType.ObjectId)]
     public string _id { get; set; }
     public string _index { get; set; }
     public string _supplier { get; set; }

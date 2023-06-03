@@ -104,6 +104,7 @@ switch (choice)
         }
         break;
     case 7:
+        await db.UpdateUser(CreateUser());
         break;
 }
 #region methods
