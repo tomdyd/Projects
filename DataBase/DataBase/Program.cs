@@ -13,7 +13,7 @@ Console.WriteLine("6. Read all cans");
 
 int choice = int.Parse(Console.ReadLine());
 
-switch(choice)
+switch (choice)
 {
     case 1:
         await db.CreateUser(CreateUser());
@@ -26,7 +26,7 @@ switch(choice)
         break;
     case 4:
         var results = await db.GetAllUsers();
-        foreach (var  user in results)
+        foreach (var user in results)
         {
             Console.WriteLine(
                 $"User ID: {user._id}\n" +
@@ -36,8 +36,46 @@ switch(choice)
                 $"Email adress: {user._email}\n\n");
         }
         break;
-
-    default:
+    case 5:
+        var valvesResults = await db.GetAllValves();
+        foreach (var valve in valvesResults)
+        {
+            Console.WriteLine(
+                $"Valve ID: {valve._id}\n" +
+                $"Index: {valve._index}\n" +
+                $"Supplier: {valve._supplier}\n" +
+                $"Full name: {valve._fullName}\n" +
+                $"Short name: {valve._shortName}\n" +
+                $"Tube length: {valve._tubeLenght}\n" +
+                $"Acceptance date: {valve._acceptanceDate}\n" +
+                $"Expiration date: {valve._expiriationDate}\n" +
+                $"Destiny product: {valve._destiny}\n" +
+                $"Amount: {valve._amount}\n" +
+                $"Storage place: {valve._storagePlace}\n" +
+                $"Last update: {valve._lastUpdate}\n" +
+                $"Last user: {valve._lastUser}\n");
+        }
+        break;
+    case 6:
+        var cansResults = await db.GetAllCans();
+        foreach (var can in cansResults)
+        {
+            Console.WriteLine(
+                $"Can ID: {can._id}\n" +
+                $"Index: {can._index}\n" +
+                $"Height: {can._height}\n" +
+                $"Diameter {can._diameter}" +
+                $"Type of internal varnish: {can._typeOfInternalVarnish}\n" +
+                $"Supplier: {can._supplier}\n" +
+                $"Full name: {can._fullName}\n" +
+                $"Short name: {can._shortName}\n" +
+                $"Acceptance date: {can._acceptanceDate}\n" +
+                $"Expiration date: {can._expiriationDate}\n" +
+                $"Amount: {can._amount}\n" +
+                $"Storage place: {can._storagePlace}\n" +
+                $"Last update: {can._lastUpdate}\n" +
+                $"Last user: {can._lastUser}\n");
+        }
         break;
 }
 
@@ -50,74 +88,82 @@ switch(choice)
 
 
 #region methods
-ValveModel CreateValve()
+static ValveModel CreateValve()
 {
+    ValveModel valve = new ValveModel();
+
     Console.Write("Enter supplier name: ");
-    string supplier = Console.ReadLine();
+    valve._supplier = Console.ReadLine();
 
     Console.Write("Enter full name of valve: ");
-    string fullName = Console.ReadLine();
+    valve._fullName = Console.ReadLine();
 
     Console.Write("Enter short name of valve: ");
-    string shortName = Console.ReadLine();
+    valve._shortName = Console.ReadLine();
 
     Console.Write("Enter the tube lenght: ");
-    string tubeLenght = Console.ReadLine();
+    valve._tubeLenght = Console.ReadLine();
 
     Console.Write("Enter the index of valve: ");
-    string index = Console.ReadLine();
+    valve._index = Console.ReadLine();
 
     Console.Write("Enter the date of acceptance: ");
-    DateOnly acceptanceDate = DateOnly.Parse(Console.ReadLine());
+    valve._acceptanceDate = DateOnly.Parse(Console.ReadLine());
 
     Console.Write("Enter the date of expiration: ");
-    DateOnly expirationDate = DateOnly.Parse(Console.ReadLine());
+    valve._expiriationDate = DateOnly.Parse(Console.ReadLine());
 
     Console.Write("Enter the name destiny product: ");
-    string destiny = Console.ReadLine();
+    valve._destiny = Console.ReadLine();
 
     Console.Write("Enter the amount of valves (must be a number): ");
-    int amount = int.Parse(Console.ReadLine());
+    valve._amount = int.Parse(Console.ReadLine());
 
     Console.Write("Enter the number of storage place: ");
-    string storagePlace = Console.ReadLine();
+    valve._storagePlace = Console.ReadLine();
 
     DateTime lastUpdate = DateTime.Now;
-
-    ValveModel valve = new ValveModel(tubeLenght, destiny, index, supplier, fullName, shortName, acceptanceDate, expirationDate, amount, storagePlace, lastUpdate);
     
     return valve;
 }
-
-CanModel CreateCan()
+static CanModel CreateCan()
 {
-    //CanModel can = new CanModel();
+    CanModel can = new CanModel();
 
     Console.Write("Enter supplier name: ");
-    string supplier = Console.ReadLine();
+    can._supplier = Console.ReadLine();
 
     Console.Write("Enter full name of can: ");
-    string fullName = Console.ReadLine();
+    can._fullName = Console.ReadLine();
 
     Console.Write("Enter short name of can: ");
-    string shortName = Console.ReadLine();
+    can._shortName = Console.ReadLine();
 
     Console.Write("Enter the index of can: ");
-    string index = Console.ReadLine();
+    can._index = Console.ReadLine();
 
     Console.Write("Enter the date of acceptance: ");
-    DateOnly dateOfAcceptance = DateOnly.Parse(Console.ReadLine());
+    can._acceptanceDate = DateOnly.Parse(Console.ReadLine());
 
     Console.Write("Enter the date of expiration: ");
-    DateOnly dateOfExpiration = DateOnly.Parse(Console.ReadLine());
+    can._expiriationDate = DateOnly.Parse(Console.ReadLine());
 
-    Console.Write("Enter the amount of cans (must be a number): ");
-    int amount = int.Parse(Console.ReadLine());
+    Console.Write("Enter the aount of cans (must be a number): ");
+    can._amount = int.Parse(Console.ReadLine());
 
     Console.Write("Enter the number of storage place: ");
-    string storagePlace = Console.ReadLine();
+    can._storagePlace = Console.ReadLine();
 
-    //return can;
+    Console.Write("Enter height of can: ");
+    can._height = Console.ReadLine();
+
+    Console.Write("Enter the diameter of can: ");
+    can._diameter = Console.ReadLine();
+
+    Console.WriteLine("Enter type of internal varnish of a can: ");
+    can._typeOfInternalVarnish = Console.ReadLine();
+
+    return can;
 }
 UserModel CreateUser()
 {
