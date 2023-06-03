@@ -22,7 +22,7 @@ switch (choice)
         await db.CreateValve(CreateValve());
         break;
     case 3:
-        await db.CreateCan(CreateCan());
+        //await db.CreateCan(CreateCan());
         break;
     case 4:
         var results = await db.GetAllUsers();
@@ -126,6 +126,7 @@ static ValveModel CreateValve()
     
     return valve;
 }
+<<<<<<< HEAD
 static CanModel CreateCan()
 {
     CanModel can = new CanModel();
@@ -165,6 +166,39 @@ static CanModel CreateCan()
 
     return can;
 }
+=======
+
+//CanModel CreateCan()
+//{
+//    //CanModel can = new CanModel();
+
+//    Console.Write("Enter supplier name: ");
+//    string supplier = Console.ReadLine();
+
+//    Console.Write("Enter full name of can: ");
+//    string fullName = Console.ReadLine();
+
+//    Console.Write("Enter short name of can: ");
+//    string shortName = Console.ReadLine();
+
+//    Console.Write("Enter the index of can: ");
+//    string index = Console.ReadLine();
+
+//    Console.Write("Enter the date of acceptance: ");
+//    DateOnly dateOfAcceptance = DateOnly.Parse(Console.ReadLine());
+
+//    Console.Write("Enter the date of expiration: ");
+//    DateOnly dateOfExpiration = DateOnly.Parse(Console.ReadLine());
+
+//    Console.Write("Enter the amount of cans (must be a number): ");
+//    int amount = int.Parse(Console.ReadLine());
+
+//    Console.Write("Enter the number of storage place: ");
+//    string storagePlace = Console.ReadLine();
+
+//    return can;
+//}
+>>>>>>> 273c1da7af2c7fc547a30faefdd6187e7f855bc6
 UserModel CreateUser()
 {
     UserModel user = new UserModel();

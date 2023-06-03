@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wA14A6bdjAHWCB5yOpEMJQLUW89HYsnbNhV9hQBSS508afbr0IeDsm95v/x0T5T8UGf7shov1acC5K9DgdTXaA==",
+  "dgSpecHash": "ZTql5DpR5h1oz7bEZlA5J3a7ZqKfOT/WtmKIoCq8LpyntQ8eZPcRnyh9cfRT8akTJDjBC/Vmgs4/1a1QboCQzQ==",
   "success": true,
-  "projectFilePath": "D:\\gitRepositories\\Projects\\DataBase\\StoreDataAccess\\StoreDataAccess.csproj",
+  "projectFilePath": "D:\\Dane\\gitRepositories\\Projects\\DataBase\\StoreDataAccess\\StoreDataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tomek\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\Tomek\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
