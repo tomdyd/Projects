@@ -71,5 +71,22 @@ public class DataAccess
         return canCollection.ReplaceOneAsync(filter, can, new ReplaceOptions { IsUpsert = true});
     }
 
+    public UserModel Login(string email, string password)
+    {
+        var userCollection = ConnectToMongo<UserModel>(_userCollection);
+        var filter = Builders<UserModel>.Filter.Where(u => u._email == email);
+        var user = userCollection.Find(filter).FirstOrDefault();
+
+        if (user != null && user._password == password)
+        {
+            return user;
+        }
+
+        else
+        {
+            return null;
+        }
+    }
+
 }
 

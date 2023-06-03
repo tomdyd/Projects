@@ -4,12 +4,38 @@ using static MongoDB.Driver.WriteConcern;
 
 DataAccess db = new DataAccess();
 
+UserModel userLogin = null;
+do
+{
+    Console.WriteLine("Podaj adres e-mail:");
+    string email = Console.ReadLine();
+
+    Console.WriteLine("Podaj hasło:");
+    string password = Console.ReadLine();
+
+    userLogin = db.Login(email, password);
+
+} while (userLogin == null);
+
+Console.WriteLine(
+    "Logged as:" +
+    $"User ID: {userLogin._id}\n" +
+    $"First name: {userLogin._firstName}\n" +
+    $"Last name: {userLogin._lastName}\n" +
+    $"Date of birth: {userLogin._dateOfBirth}\n" +
+    $"Email address: {userLogin._email}\n" +
+    $"Password: {userLogin._password}\n");
+
+Console.ReadKey();
+Console.Clear();
+
 Console.WriteLine("1. Create user");
 Console.WriteLine("2. Create valve");
 Console.WriteLine("3. Create can");
 Console.WriteLine("4. Read all users");
 Console.WriteLine("5. Read all valves");
 Console.WriteLine("6. Read all cans");
+Console.WriteLine("7. Update users");
 
 int choice = int.Parse(Console.ReadLine());
 
@@ -77,16 +103,9 @@ switch (choice)
                 $"Last user: {can._lastUser}\n");
         }
         break;
+    case 7:
+        break;
 }
-
-//var results = await db.GetAllUsers();
-
-//foreach (var user in results)
-//{
-//    Console.WriteLine(user._fullName);
-//}
-
-
 #region methods
 static ValveModel CreateValve()
 {
