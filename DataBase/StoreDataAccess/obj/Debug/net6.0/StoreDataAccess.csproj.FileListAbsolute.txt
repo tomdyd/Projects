@@ -10,3 +10,15 @@ D:\gitRepositories\Projects\DataBase\StoreDataAccess\obj\Debug\net6.0\StoreDataA
 D:\gitRepositories\Projects\DataBase\StoreDataAccess\obj\Debug\net6.0\refint\StoreDataAccess.dll
 D:\gitRepositories\Projects\DataBase\StoreDataAccess\obj\Debug\net6.0\StoreDataAccess.pdb
 D:\gitRepositories\Projects\DataBase\StoreDataAccess\obj\Debug\net6.0\ref\StoreDataAccess.dll
+D:\Dane\gitRepositories\Projects\DataBase\StoreDataAccess\obj\Debug\net6.0\StoreDataAccess.csproj.AssemblyReference.cache
+D:\Dane\gitRepositories\Projects\DataBase\StoreDataAccess\obj\Debug\net6.0\StoreDataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dane\gitRepositories\Projects\DataBase\StoreDataAccess\obj\Debug\net6.0\StoreDataAccess.AssemblyInfoInputs.cache
+D:\Dane\gitRepositories\Projects\DataBase\StoreDataAccess\obj\Debug\net6.0\StoreDataAccess.AssemblyInfo.cs
+D:\Dane\gitRepositories\Projects\DataBase\StoreDataAccess\obj\Debug\net6.0\StoreDataAccess.csproj.CoreCompileInputs.cache
+D:\Dane\gitRepositories\Projects\DataBase\StoreDataAccess\obj\Debug\net6.0\StoreDataAccess.dll
+D:\Dane\gitRepositories\Projects\DataBase\StoreDataAccess\obj\Debug\net6.0\refint\StoreDataAccess.dll
+D:\Dane\gitRepositories\Projects\DataBase\StoreDataAccess\obj\Debug\net6.0\StoreDataAccess.pdb
+D:\Dane\gitRepositories\Projects\DataBase\StoreDataAccess\bin\Debug\net6.0\StoreDataAccess.deps.json
+D:\Dane\gitRepositories\Projects\DataBase\StoreDataAccess\bin\Debug\net6.0\StoreDataAccess.dll
+D:\Dane\gitRepositories\Projects\DataBase\StoreDataAccess\bin\Debug\net6.0\StoreDataAccess.pdb
+D:\Dane\gitRepositories\Projects\DataBase\StoreDataAccess\obj\Debug\net6.0\ref\StoreDataAccess.dll

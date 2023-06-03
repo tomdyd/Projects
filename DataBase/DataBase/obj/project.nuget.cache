@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1qhp2wvGwZ6mLZNNHIY31xFHuwC5CFLZxhURdzsdqkib13wj3m4r02jgh0IyDI9mUNhtE1fgqD30iSNoJq94pA==",
+  "dgSpecHash": "WblHm/C+qwQZg0860X0ypMJXJqusME7Ruf1Kcj3mo5idx6IzQ+rxA+GcQCq++cdrBsnNHEQ4rCY3Ksdh8Qe5yw==",
   "success": true,
-  "projectFilePath": "D:\\gitRepositories\\Projects\\DataBase\\DataBase\\DataBase.csproj",
+  "projectFilePath": "D:\\Dane\\gitRepositories\\Projects\\DataBase\\DataBase\\DataBase.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tomek\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\Tomek\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",

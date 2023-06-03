@@ -5,7 +5,7 @@ using StoreDataAccess.Models;
 namespace StoreDataAccess.DataAccess;
 public class DataAccess
 {
-    private const string _connectionString = "mongodb+srv://tomdyd:tomdyd7583@cluster0.2ggdhx2.mongodb.net/";
+    private const string _connectionString = "mongodb://localhost:27017/";
     private const string _databaseName = "Store_db";
     private const string _valveCollection = "valve_collection";
     private const string _canCollection = "can_collection";
@@ -58,7 +58,7 @@ public class DataAccess
     public Task UpdateValve(ValveModel valve)
     {
         var valveCollection = ConnectToMongo<ValveModel>(_valveCollection);
-        var filter = Builders<ValveModel>.Filter.Eq("_index", valve._index);
+        var filter = Builders<ValveModel>.Filter.Eq("_index", valve.GetIndex());
         return valveCollection.ReplaceOneAsync(filter, valve, new ReplaceOptions { IsUpsert = true});
     }
 
