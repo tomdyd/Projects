@@ -3,54 +3,69 @@ using StoreDataAccess.Models;
 using static MongoDB.Driver.WriteConcern;
 
 DataAccess db = new DataAccess();
-
 UserModel userLogin = null;
-do
-{
-    Console.WriteLine("Podaj adres e-mail:");
-    string email = Console.ReadLine();
 
-    Console.WriteLine("Podaj hasło:");
-    string password = Console.ReadLine();
-
-    userLogin = db.Login(email, password);
-
-} while (userLogin == null);
-
-Console.WriteLine(
-    "Logged as:" +
-    $"User ID: {userLogin._id}\n" +
-    $"First name: {userLogin._firstName}\n" +
-    $"Last name: {userLogin._lastName}\n" +
-    $"Date of birth: {userLogin._dateOfBirth}\n" +
-    $"Email address: {userLogin._email}\n" +
-    $"Password: {userLogin._password}\n");
-
-Console.ReadKey();
-Console.Clear();
-
-Console.WriteLine("1. Create user");
-Console.WriteLine("2. Create valve");
-Console.WriteLine("3. Create can");
-Console.WriteLine("4. Read all users");
-Console.WriteLine("5. Read all valves");
-Console.WriteLine("6. Read all cans");
-Console.WriteLine("7. Update users");
-
+Console.WriteLine("1. Login");
+Console.WriteLine("2. Register");
+Console.WriteLine("3. Exit");
 int choice = int.Parse(Console.ReadLine());
 
 switch (choice)
 {
     case 1:
-        await db.CreateUser(CreateUser());
+        do
+        {
+            Console.WriteLine("Podaj adres e-mail:");
+            string email = Console.ReadLine();
+
+            Console.WriteLine("Podaj hasło:");
+            string password = Console.ReadLine();
+
+            userLogin = db.Login(email, password);
+
+        } while (userLogin == null);
         break;
     case 2:
-        await db.CreateValve(CreateValve());
+        await db.CreateUser(CreateUser());
         break;
     case 3:
+        Environment.Exit(0);
+        break;
+}
+
+if (choice == 1)
+{
+    Console.WriteLine(
+        "Logged as:" +
+        $"User ID: {userLogin._id}\n" +
+        $"First name: {userLogin._firstName}\n" +
+        $"Last name: {userLogin._lastName}\n" +
+        $"Date of birth: {userLogin._dateOfBirth}\n" +
+        $"Email address: {userLogin._email}\n" +
+        $"Password: {userLogin._password}\n");
+
+    Console.ReadKey();
+    Console.Clear();
+}
+
+Console.WriteLine("1. Create valve");
+Console.WriteLine("2. Create can");
+Console.WriteLine("3. Read all users");
+Console.WriteLine("4. Read all valves");
+Console.WriteLine("5. Read all cans");
+Console.WriteLine("6. Update users");
+
+choice = int.Parse(Console.ReadLine());
+
+switch (choice)
+{
+    case 1:
+        await db.CreateValve(CreateValve());
+        break;
+    case 2:
         await db.CreateCan(CreateCan());
         break;
-    case 4:
+    case 3:
         var results = await db.GetAllUsers();
         foreach (var user in results)
         {
@@ -62,7 +77,7 @@ switch (choice)
                 $"Email adress: {user._email}\n\n");
         }
         break;
-    case 5:
+    case 4:
         var valvesResults = await db.GetAllValves();
         foreach (var valve in valvesResults)
         {
@@ -82,7 +97,7 @@ switch (choice)
                 $"Last user: {valve._lastUser}\n");
         }
         break;
-    case 6:
+    case 5:
         var cansResults = await db.GetAllCans();
         foreach (var can in cansResults)
         {
@@ -103,7 +118,7 @@ switch (choice)
                 $"Last user: {can._lastUser}\n");
         }
         break;
-    case 7:
+    case 6:
         await db.UpdateUser(CreateUser());
         break;
 }

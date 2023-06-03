@@ -757,11 +757,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\gitRepositories\\Projects\\DataBase\\StoreDataAccess\\StoreDataAccess.csproj",
+      "projectUniqueName": "D:\\Dane\\gitRepositories\\Projects\\DataBase\\StoreDataAccess\\StoreDataAccess.csproj",
       "projectName": "StoreDataAccess",
-      "projectPath": "D:\\gitRepositories\\Projects\\DataBase\\StoreDataAccess\\StoreDataAccess.csproj",
+      "projectPath": "D:\\Dane\\gitRepositories\\Projects\\DataBase\\StoreDataAccess\\StoreDataAccess.csproj",
       "packagesPath": "C:\\Users\\Tomek\\.nuget\\packages\\",
-      "outputPath": "D:\\gitRepositories\\Projects\\DataBase\\StoreDataAccess\\obj\\",
+      "outputPath": "D:\\Dane\\gitRepositories\\Projects\\DataBase\\StoreDataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Tomek\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -815,7 +815,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
