@@ -48,6 +48,13 @@ public class DataAccess
         return canCollection.InsertOneAsync(can);
     }
 
+    public async Task<List<CanModel>> GetAllCans()
+    {
+        var canCollection = ConnectToMongo<CanModel>(_canCollection);
+        var results = await canCollection.FindAsync(_ => true);
+        return results.ToList();
+    }
+
     public Task UpdateValve(ValveModel valve)
     {
         var valveCollection = ConnectToMongo<ValveModel>(_valveCollection);
