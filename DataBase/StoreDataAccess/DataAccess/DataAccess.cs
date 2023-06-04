@@ -39,10 +39,27 @@ public class DataAccess
         var results = await userCollection.FindAsync(_ => true);
         return results.ToList();
     }
+
+    // Metoda wyszukująca i zwracająca wszystkie elementy z kolekcji
     public async Task<List<ValveModel>> GetAllValves()
     {
         var valvesCollection = ConnectToMongo<ValveModel>(_valveCollection);
         var results = await valvesCollection.FindAsync(_ => true);
+        return results.ToList();
+    }
+
+    // Metoda wyszukująca i zwracająca elementy z kolekcji przypisane do zalogowanego użytkownika
+    public async Task<List<ValveModel>> GetAllValves(UserModel user)
+    {
+        var valvesCollection = ConnectToMongo<ValveModel>(_valveCollection);
+        var results = await valvesCollection.FindAsync(x => x._lastUser._email == user._email);
+        return results.ToList();
+    }
+    // Metoda wyszukująca i zwracająca element o konkretnym indeksie
+    public async Task<List<ValveModel>> GetAllValves(ValveModel valve, string index)
+    {
+        var valvesCollection = ConnectToMongo<ValveModel>(_valveCollection);
+        var results = await valvesCollection.FindAsync(x => x._index == index);
         return results.ToList();
     }
     public async Task<List<CanModel>> GetAllCans()
