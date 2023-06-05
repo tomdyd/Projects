@@ -1,6 +1,7 @@
 ﻿using MongoDB.Driver;
 using MongoDB.Driver.Core.Configuration;
 using StoreDataAccess.Models;
+using static MongoDB.Driver.WriteConcern;
 
 namespace StoreDataAccess.DataAccess;
 public class DataAccess
@@ -40,6 +41,13 @@ public class DataAccess
         return results.ToList();
     }
 
+    public async Task<List<UserModel>> GetAllUsers(string email)
+    {
+        var userCollection = ConnectToMongo<UserModel>(_userCollection);
+        var results = await userCollection.FindAsync(x => x._email == email);
+        return results.ToList();
+    }
+
     // Metoda wyszukująca i zwracająca wszystkie elementy z kolekcji
     public async Task<List<ValveModel>> GetAllValves()
     {
@@ -68,11 +76,15 @@ public class DataAccess
         var results = await canCollection.FindAsync(_ => true);
         return results.ToList();
     }
-    public Task UpdateUser(UserModel user)
-    {
+    public void UpdateUser(string email, UserModel user)
+    {        
         var userCollection = ConnectToMongo<UserModel>(_userCollection);
-        var filter = Builders<UserModel>.Filter.Eq("_index", user._id);
-        return userCollection.ReplaceOneAsync(filter, user, new ReplaceOptions { IsUpsert = true });
+        var filter = Builders<UserModel>.Filter.Eq(e => e._email, email);
+        //var filter = Builders<UserModel>.Filter.Eq("_email", user._email);
+        var oldUser = userCollection.Find(filter).First();
+        var oldId = oldUser._id;
+        user._id = oldId;
+        userCollection.FindOneAndReplace(filter, user/* new ReplaceOptions { IsUpsert = true}*/);
     }
     public Task UpdateValve(ValveModel valve)
     {

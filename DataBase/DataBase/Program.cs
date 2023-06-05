@@ -1,6 +1,7 @@
-﻿using StoreDataAccess.DataAccess;
+﻿using MongoDB.Driver;
+using StoreDataAccess.DataAccess;
 using StoreDataAccess.Models;
-using static MongoDB.Driver.WriteConcern;
+using System.Text;
 
 DataAccess db = new DataAccess();
 UserModel userLogged = null;
@@ -23,7 +24,7 @@ do
             string email = Console.ReadLine();
 
             Console.WriteLine("Podaj hasło:");
-            string password = Console.ReadLine();
+            string password = SetPassword();
 
             userLogged = db.Login(email, password);
 
@@ -35,12 +36,12 @@ do
             Environment.Exit(0);
             break;
     }
-    if (userLogged == null)
+    if (userLogged == null && choice == 1)
     {
-        Console.WriteLine("Invalid username or password!");
+        Console.WriteLine("\nInvalid username or password!\n");
         Console.ReadKey();
     }
-    else
+    else if(userLogged != null && choice == 1)
     {
         Console.WriteLine(
             "\nLogged as:\n" +
@@ -49,7 +50,8 @@ do
             $"Last name: {userLogged._lastName}\n" +
             $"Date of birth: {userLogged._dateOfBirth}\n" +
             $"Email address: {userLogged._email}\n" +
-            $"Password: {userLogged._password}");
+            $"Password: {userLogged._password} \n"+
+            $"\nPlease type enter to continue");
         Console.ReadKey();
     }
 } while (userLogged == null);
@@ -130,7 +132,14 @@ while(true)
             }
             break;
         case 6:
-            await db.UpdateUser(CreateUser());
+            //await db.UpdateValve(CreateValve(userLogged));
+            Console.Write("Enter user name of user you want to update: ");
+            string email = Console.ReadLine();
+
+            var updateUser = CreateUser();
+            db.UpdateUser(email, updateUser);
+            Console.Clear();
+
             break;
         case 7:
             Environment.Exit(0);
@@ -247,5 +256,35 @@ UserModel CreateUser()
     user._password = Console.ReadLine();
 
     return user;
+}
+static string SetPassword()
+{
+    var password = new StringBuilder();
+    string psw = "";
+    while (true)
+    {
+        ConsoleKeyInfo i = Console.ReadKey(true);
+        if (i.Key == ConsoleKey.Enter)
+        {
+            break;
+        }
+        else if (i.Key == ConsoleKey.Backspace)
+        {
+            if(password.Length > 0)
+            {
+                password.Remove(password.Length - 1, 1);
+                Console.Write("\b \b");
+            }
+        }
+        else
+        {
+            password.Append(i.KeyChar);
+            Console.Write("*");
+        }
+        psw = password.ToString();
+    }
+
+    return psw;
+
 }
 #endregion
