@@ -118,7 +118,7 @@ while (true)
                     Console.Clear();
                     do
                     {
-                        ValvesByUsersDisplay();
+                        UsersDisplay();
                         key = Console.ReadKey();
                     } while (key.Key != ConsoleKey.Enter);
                     break;
@@ -199,16 +199,28 @@ UserModel CreateUser()
 {
     UserModel user = new UserModel();
 
-    Console.Write("Enter your first name: ");
-    user._firstName = Console.ReadLine();
-    Console.Write("Enter your last name: ");
-    user._lastName = Console.ReadLine();
-    Console.Write("Enter your date of birth: ");
-    user._dateOfBirth = DateOnly.Parse(Console.ReadLine());
-    Console.Write("Enter your email: ");
-    user._email = Console.ReadLine();
-    Console.Write("Set your password: ");
-    user._password = SetPassword();
+    string msg = "Enter your first name: ";
+    Console.Write(msg);
+    user._firstName = ValidateUserModelInput(user, msg);
+
+    msg = "Enter your last name: ";
+    Console.Write(msg);
+    user._lastName = ValidateUserModelInput(user, msg);
+
+    bool isDate;
+    do
+    {
+        Console.Write("Enter your date of birth (DD-MM-YYYY): ");
+        isDate = DateOnly.TryParse(Console.ReadLine(), out DateOnly dateOfBirth);
+    } while (!isDate);
+
+    msg = "Enter your email: ";
+    Console.Write(msg);
+    user._email = ValidateUserModelInput(user, msg); // todo regex maila
+
+    msg = "Set your password: ";
+    Console.Write(msg);
+    user._password = SetPassword(); // todo walidacja hasła
 
     return user;
 }
@@ -399,5 +411,18 @@ async void CansDisplay()
     }
 
     Console.WriteLine("Please type enter key to continue");
+}
+static string ValidateUserModelInput(UserModel user, string msg)
+{
+    string temp = Console.ReadLine();
+
+    while(string.IsNullOrEmpty(temp))
+    {
+        Console.Clear();
+        Console.WriteLine("This field can not be empty. Try again!");
+        Console.Write(msg);
+        temp = Console.ReadLine();
+    }
+    return user._firstName = temp;
 }
 #endregion
