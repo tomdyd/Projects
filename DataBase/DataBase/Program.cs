@@ -118,7 +118,7 @@ while (true)
                     Console.Clear();
                     do
                     {
-                        UsersDisplay();
+                        ValvesByUsersDisplay();
                         key = Console.ReadKey();
                     } while (key.Key != ConsoleKey.Enter);
                     break;
@@ -212,6 +212,10 @@ UserModel CreateUser()
     {
         Console.Write("Enter your date of birth (DD-MM-YYYY): ");
         isDate = DateOnly.TryParse(Console.ReadLine(), out DateOnly dateOfBirth);
+        if (isDate)
+        {
+            user._dateOfBirth = dateOfBirth;
+        }
     } while (!isDate);
 
     msg = "Enter your email: ";

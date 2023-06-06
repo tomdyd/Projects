@@ -105,7 +105,7 @@ public class DataAccess
             user._id = oldId;
             return userCollection.ReplaceOneAsync(filter, user);
         }
-    }
+    } // todo informacja o nadpisaniu obiektu
     public Task UpdateValveByIndex(ValveModel valve, string index)
     {
         var valveCollection = ConnectToMongo<ValveModel>(_valveCollection);
@@ -124,7 +124,7 @@ public class DataAccess
             valve._id = oldId;
             return valveCollection.ReplaceOneAsync(filter, valve);
         }
-    }
+    } // todo informacja o nadpisaniu obiektu
     public Task UpdateCanByIndex(CanModel can, string index)
     {
         var canCollection = ConnectToMongo<CanModel>(_canCollection);
@@ -142,7 +142,7 @@ public class DataAccess
             can._id = oldId;
             return canCollection.ReplaceOneAsync(filter, can);
         }
-    }
+    } // todo informacja o nadpisaniu obiektu
     public Task DeleteUserByUserName(string email)
     {
         var userCollection = ConnectToMongo<UserModel>(_userCollection);
@@ -158,12 +158,12 @@ public class DataAccess
         {
             return userCollection.DeleteOneAsync(filter);
         }
-    }
-    public Task DeleteValveByIndex(string index)
+    } // todo informacja o usunięciu obiektu
+    public Task DeleteValveByIndex(string index) 
     {
         var valveCollection = ConnectToMongo<ValveModel>(_valveCollection);
         var filter = Builders<ValveModel>.Filter.Eq(v => v._index, index);
-        var oldValve = valveCollection.Find(filter).First();
+        var oldValve = valveCollection.Find(filter).FirstOrDefault();
         if (oldValve == null)
         {
             Console.WriteLine("Valve was not found!");
@@ -174,7 +174,7 @@ public class DataAccess
         {
             return valveCollection.DeleteOneAsync(filter);
         }
-    }
+    } // todo informacja o usunięciu obiektu
     public Task DeleteCanByIndex(string index)
     {
         var canCollection = ConnectToMongo<CanModel>(_canCollection);
@@ -190,7 +190,7 @@ public class DataAccess
         {
             return canCollection.DeleteOneAsync(filter);
         }
-    }
+    } // todo informacja o usunięciu obiektu
     public UserModel Login(string email, string password)
     {
         var userCollection = ConnectToMongo<UserModel>(_userCollection);
