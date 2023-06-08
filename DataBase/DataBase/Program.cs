@@ -75,6 +75,7 @@ while (true)
     Console.WriteLine("2. Read components");
     Console.WriteLine("3. Change components");
     Console.WriteLine("4. Delete components");
+    Console.WriteLine("5. Logout");
     bool isNumber = int.TryParse(Console.ReadLine(), out choice);
     if (!isNumber)
     {
@@ -87,6 +88,7 @@ while (true)
             Console.Clear();
             Console.WriteLine("1. Add valve");
             Console.WriteLine("2. Add can");
+            Console.WriteLine("3. Go back");
             isNumber = int.TryParse(Console.ReadLine(), out choice);
             if (!isNumber)
             {
@@ -102,6 +104,8 @@ while (true)
                     Console.Clear();
                     CreateCan();
                     break;
+                case 3:
+                    break;
             }
             break;
 
@@ -109,6 +113,7 @@ while (true)
             Console.Clear();
             Console.WriteLine("1. Read valves list");
             Console.WriteLine("2. Read cans list");
+            Console.WriteLine("3. Go back");
             isNumber = int.TryParse(Console.ReadLine(), out choice);
 
             ConsoleKeyInfo key;
@@ -130,6 +135,8 @@ while (true)
                         key = Console.ReadKey();
                     } while (key.Key != ConsoleKey.Enter);
                     break;
+                case 3:
+                    break;
             }
             break;
 
@@ -137,6 +144,7 @@ while (true)
             Console.Clear();
             Console.WriteLine("1. Update valve");
             Console.WriteLine("2. Update can");
+            Console.WriteLine("3. Go back");
             isNumber = int.TryParse(Console.ReadLine(), out choice);
             switch(choice)
             {
@@ -168,6 +176,8 @@ while (true)
                     var updateCan = CreateCan();
                     await db.UpdateCanByIndex(updateCan, canIndex);
                     break;
+                case 3:
+                    break;
             }
             break;
 
@@ -175,6 +185,7 @@ while (true)
             Console.Clear();
             Console.WriteLine("1. Delete valve");
             Console.WriteLine("2. Delete can");
+            Console.WriteLine("3. Go back");
             isNumber = int.TryParse(Console.ReadLine(), out choice);
             switch(choice)
             {
@@ -190,8 +201,12 @@ while (true)
                     string canIndex = Console.ReadLine();
                     db.DeleteCanByIndex(canIndex);
                     break;
+                case 3:
+                    break;
             }
             break;
+        case 5:
+            break;  //nie dziala
     }
 }
 #region methods
