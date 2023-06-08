@@ -206,6 +206,7 @@ while (true)
             }
             break;
         case 5:
+            userLogged = null;
             break;  //nie dziala
     }
 }
