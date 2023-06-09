@@ -1,5 +1,6 @@
 ﻿using MongoDB.Driver;
 using StoreDataAccess.Models;
+using System;
 using System.Text;
 
 namespace StoreDataAccess.DataAccess;
@@ -106,11 +107,24 @@ public class DataAccess
             return userCollection.ReplaceOneAsync(filter, user);
         }
     } // todo informacja o nadpisaniu obiektu
+    public bool FindValveByIndex(string index)
+    {
+        var valveCollection = ConnectToMongo<ValveModel>(_valveCollection);
+        var filter = Builders<ValveModel>.Filter.Eq(i => i._index, index);
+        var valve = valveCollection.Find(filter).FirstOrDefault();
+
+        if (valve == null)
+        {
+            return false;
+        }
+        else
+            return true;
+    }
     public Task UpdateValveByIndex(ValveModel valve, string index)
     {
         var valveCollection = ConnectToMongo<ValveModel>(_valveCollection);
         var filter = Builders<ValveModel>.Filter.Eq(i => i._index, index);
-        var OldValve = valveCollection.Find(filter).First();
+        var OldValve = valveCollection.Find(filter).FirstOrDefault();
 
         if (OldValve == null)
         {

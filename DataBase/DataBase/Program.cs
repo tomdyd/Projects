@@ -8,206 +8,222 @@ DataAccess db = new DataAccess();
 UserModel userLogged = null;
 
 int choice;
-
-do
-{
-    Console.Clear();
-    var dateTime = DateTime.Now;
-    Console.WriteLine(dateTime);
-    Console.WriteLine("1. Login");
-    Console.WriteLine("2. Register");
-    Console.WriteLine("3. Exit");
-    choice = int.Parse(Console.ReadLine());
-    Console.Clear();
-
-    switch (choice)
-    {
-        case 1:
-            Console.Write("Enter email address: ");
-            string email = Console.ReadLine();
-
-            Console.Write("Enter password: ");
-            string password = SetPassword();
-
-            userLogged = db.Login(email, password);
-
-            if (userLogged == null)
-            {
-                Console.WriteLine("\nInvalid username or password!\n");
-                Console.ReadKey();
-            }
-            else if (userLogged != null)
-            {
-                ConsoleKeyInfo i;
-                do
-                {
-                    Console.Clear();
-                    Console.WriteLine(
-                        "Logged as:\n" +
-                        $"User ID: {userLogged._id}\n" +
-                        $"First name: {userLogged._firstName}\n" +
-                        $"Last name: {userLogged._lastName}\n" +
-                        $"Date of birth: {userLogged._dateOfBirth}\n" +
-                        $"Email address: {userLogged._email}\n" +
-                        $"Password: {userLogged._password} \n" +
-                        $"\nPlease type enter to continue");
-                    i = Console.ReadKey();
-                    if (i.Key != ConsoleKey.Enter)
-                    {
-                        continue;
-                    }
-                } while (i.Key != ConsoleKey.Enter);
-            }
-            break;
-        case 2:
-            db.CreateUser(CreateUser());
-            break;
-        case 3:
-            Environment.Exit(0);
-            break;
-    }
-} while (userLogged == null);
+bool access = false;
 
 while (true)
 {
-    Console.Clear();
-    Console.WriteLine("1. Add components");
-    Console.WriteLine("2. Read components");
-    Console.WriteLine("3. Change components");
-    Console.WriteLine("4. Delete components");
-    Console.WriteLine("5. Logout");
-    bool isNumber = int.TryParse(Console.ReadLine(), out choice);
-    if (!isNumber)
+    do
     {
-        continue;
-    }
+        Console.Clear();
+        var dateTime = DateTime.Now;
+        Console.WriteLine(dateTime);
+        Console.WriteLine("1. Login");
+        Console.WriteLine("2. Register");
+        Console.WriteLine("3. Exit");
+        choice = int.Parse(Console.ReadLine());
+        Console.Clear();
 
-    switch(choice)
-    {
-        case 1:
-            Console.Clear();
-            Console.WriteLine("1. Add valve");
-            Console.WriteLine("2. Add can");
-            Console.WriteLine("3. Go back");
-            isNumber = int.TryParse(Console.ReadLine(), out choice);
-            if (!isNumber)
-            {
-                continue;
-            }
-            switch(choice)
-            {
-                case 1:
-                    Console.Clear();
-                    await db.CreateValve(CreateValve());
-                    break;
-                case 2:
-                    Console.Clear();
-                    CreateCan();
-                    break;
-                case 3:
-                    break;
-            }
-            break;
+        switch (choice)
+        {
+            case 1:
+                Console.Write("Enter email address: ");
+                string email = Console.ReadLine();
 
-        case 2:
-            Console.Clear();
-            Console.WriteLine("1. Read valves list");
-            Console.WriteLine("2. Read cans list");
-            Console.WriteLine("3. Go back");
-            isNumber = int.TryParse(Console.ReadLine(), out choice);
+                Console.Write("Enter password: ");
+                string password = SetPassword();
 
-            ConsoleKeyInfo key;
-            switch (choice)
-            {                
-                case 1:
-                    Console.Clear();
+                userLogged = db.Login(email, password);
+
+                if (userLogged == null)
+                {
+                    Console.WriteLine("\nInvalid username or password!\n");
+                    Console.ReadKey();
+                }
+                else if (userLogged != null)
+                {
+                    access = true;
+                    ConsoleKeyInfo i;
                     do
                     {
-                        ValvesByUsersDisplay();
-                        key = Console.ReadKey();
-                    } while (key.Key != ConsoleKey.Enter);
-                    break;
-                case 2:
-                    Console.Clear();
-                    do
-                    {
-                        CansDisplay();
-                        key = Console.ReadKey();
-                    } while (key.Key != ConsoleKey.Enter);
-                    break;
-                case 3:
-                    break;
-            }
-            break;
+                        Console.Clear();
+                        Console.WriteLine(
+                            "Logged as:\n" +
+                            $"User ID: {userLogged._id}\n" +
+                            $"First name: {userLogged._firstName}\n" +
+                            $"Last name: {userLogged._lastName}\n" +
+                            $"Date of birth: {userLogged._dateOfBirth}\n" +
+                            $"Email address: {userLogged._email}\n" +
+                            $"Password: {userLogged._password} \n" +
+                            $"\nPlease type enter to continue");
+                        i = Console.ReadKey();
+                        if (i.Key != ConsoleKey.Enter)
+                        {
+                            continue;
+                        }
+                    } while (i.Key != ConsoleKey.Enter);
+                }
+                break;
+            case 2:
+                db.CreateUser(CreateUser());
+                break;
+            case 3:
+                Environment.Exit(0);
+                break;
+        }
+    } while (userLogged == null);
 
-        case 3:
-            Console.Clear();
-            Console.WriteLine("1. Update valve");
-            Console.WriteLine("2. Update can");
-            Console.WriteLine("3. Go back");
-            isNumber = int.TryParse(Console.ReadLine(), out choice);
-            switch(choice)
-            {
-                case 1:
-                    Console.Clear();
-                    Console.Write("Enter index of valve you want to update: ");
-                    string valveIndex = Console.ReadLine();
-                    if (string.IsNullOrEmpty(valveIndex))
-                    {
-                        Console.WriteLine("Index can not be empty!");
-                        Console.ReadKey();
+    while (access == true)
+    {
+        Console.Clear();
+        Console.WriteLine("1. Add components");
+        Console.WriteLine("2. Read components");
+        Console.WriteLine("3. Change components");
+        Console.WriteLine("4. Delete components");
+        Console.WriteLine("5. Logout");
+        bool isNumber = int.TryParse(Console.ReadLine(), out choice);
+        if (!isNumber)
+        {
+            continue;
+        }
+
+        switch (choice)
+        {
+            case 1:
+                Console.Clear();
+                Console.WriteLine("1. Add valve");
+                Console.WriteLine("2. Add can");
+                Console.WriteLine("3. Go back");
+                isNumber = int.TryParse(Console.ReadLine(), out choice);
+                if (!isNumber)
+                {
+                    continue;
+                }
+                switch (choice)
+                {
+                    case 1:
+                        Console.Clear();
+                        await db.CreateValve(CreateValve());
                         break;
-                    }
-
-                    var updateValve = CreateValve();
-                    await db.UpdateValveByIndex(updateValve, valveIndex);
-                    break;
-                case 2:
-                    Console.Clear();
-                    Console.WriteLine("Enter index of valve you want to update: ");
-                    string canIndex = Console.ReadLine();
-                    if(string.IsNullOrEmpty(canIndex))
-                    {
-                        Console.WriteLine("Index can not be empty!");
-                        Console.ReadKey();
+                    case 2:
+                        Console.Clear();
+                        CreateCan();
                         break;
-                    }
+                    case 3:
+                        break;
+                }
+                break;
 
-                    var updateCan = CreateCan();
-                    await db.UpdateCanByIndex(updateCan, canIndex);
-                    break;
-                case 3:
-                    break;
-            }
-            break;
+            case 2:
+                Console.Clear();
+                Console.WriteLine("1. Read valves list");
+                Console.WriteLine("2. Read cans list");
+                Console.WriteLine("3. Go back");
+                isNumber = int.TryParse(Console.ReadLine(), out choice);
 
-        case 4:
-            Console.Clear();
-            Console.WriteLine("1. Delete valve");
-            Console.WriteLine("2. Delete can");
-            Console.WriteLine("3. Go back");
-            isNumber = int.TryParse(Console.ReadLine(), out choice);
-            switch(choice)
-            {
-                case 1:
-                    Console.Clear();
-                    Console.Write("Enter index of valve you want to delete: ");
-                    string valveIndex = Console.ReadLine();
-                    db.DeleteValveByIndex(valveIndex);
-                    break;
-                case 2:
-                    Console.Clear();
-                    Console.Write("Enter index of can you want to delete: ");
-                    string canIndex = Console.ReadLine();
-                    db.DeleteCanByIndex(canIndex);
-                    break;
-                case 3:
-                    break;
-            }
-            break;
-        case 5:
-            userLogged = null;
-            break;  //nie dziala
+                ConsoleKeyInfo key;
+                switch (choice)
+                {
+                    case 1:
+                        Console.Clear();
+                        do
+                        {
+                            ValvesByUsersDisplay();
+                            key = Console.ReadKey();
+                        } while (key.Key != ConsoleKey.Enter);
+                        break;
+                    case 2:
+                        Console.Clear();
+                        do
+                        {
+                            CansDisplay();
+                            key = Console.ReadKey();
+                        } while (key.Key != ConsoleKey.Enter);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+
+            case 3:
+                Console.Clear();
+                Console.WriteLine("1. Update valve");
+                Console.WriteLine("2. Update can");
+                Console.WriteLine("3. Go back");
+                isNumber = int.TryParse(Console.ReadLine(), out choice);
+                switch (choice)
+                {
+                    case 1:
+                        Console.Clear();
+                        Console.Write("Enter index of valve you want to update: ");
+                        string valveIndex = Console.ReadLine();                    
+                        if (string.IsNullOrEmpty(valveIndex))
+                        {
+                            Console.WriteLine("Index can not be empty!");
+                            Console.ReadKey();
+                            break;
+                        }
+
+                        var exist = db.FindValveByIndex(valveIndex);
+
+                        if (exist)
+                        {
+                            var updateValve = CreateValve();
+                            await db.UpdateValveByIndex(updateValve, valveIndex);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Valve index doesn't exist!");
+                            Console.ReadKey();
+                        }
+                        break;
+                    case 2:
+                        Console.Clear();
+                        Console.WriteLine("Enter index of valve you want to update: ");
+                        string canIndex = Console.ReadLine();
+                        if (string.IsNullOrEmpty(canIndex))
+                        {
+                            Console.WriteLine("Index can not be empty!");
+                            Console.ReadKey();
+                            break;
+                        }
+
+                        var updateCan = CreateCan();
+                        await db.UpdateCanByIndex(updateCan, canIndex);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+
+            case 4:
+                Console.Clear();
+                Console.WriteLine("1. Delete valve");
+                Console.WriteLine("2. Delete can");
+                Console.WriteLine("3. Go back");
+                isNumber = int.TryParse(Console.ReadLine(), out choice);
+                switch (choice)
+                {
+                    case 1:
+                        Console.Clear();
+                        Console.Write("Enter index of valve you want to delete: ");
+                        string valveIndex = Console.ReadLine();
+                        db.DeleteValveByIndex(valveIndex);
+                        break;
+                    case 2:
+                        Console.Clear();
+                        Console.Write("Enter index of can you want to delete: ");
+                        string canIndex = Console.ReadLine();
+                        db.DeleteCanByIndex(canIndex);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 5:
+                userLogged = null;
+                access = false;
+                break;  //nie dziala
+        }
     }
 }
 #region methods
