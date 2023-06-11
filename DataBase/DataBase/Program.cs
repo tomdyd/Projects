@@ -1,8 +1,6 @@
-﻿using MongoDB.Driver;
-using StoreDataAccess.DataAccess;
+﻿using StoreDataAccess.DataAccess;
 using StoreDataAccess.Models;
 using System.Text;
-using static MongoDB.Driver.WriteConcern;
 
 DataAccess db = new DataAccess();
 UserModel userLogged = null;
@@ -32,7 +30,7 @@ while (true)
                 Console.Write("Enter password: ");
                 string password = SetPassword();
 
-                userLogged = db.Login(email, password);
+                userLogged = db.Login(email.ToLower(), password);
 
                 if (userLogged == null)
                 {
@@ -53,7 +51,6 @@ while (true)
                             $"Last name: {userLogged._lastName}\n" +
                             $"Date of birth: {userLogged._dateOfBirth}\n" +
                             $"Email address: {userLogged._email}\n" +
-                            $"Password: {userLogged._password} \n" +
                             $"\nPlease type enter to continue");
                         i = Console.ReadKey();
                         if (i.Key != ConsoleKey.Enter)
@@ -106,7 +103,7 @@ while (true)
                         break;
                     case 2:
                         Console.Clear();
-                        CreateCan();
+                        await db.CreateCan(CreateCan());
                         break;
                     case 3:
                         break;
@@ -222,7 +219,7 @@ while (true)
             case 5:
                 userLogged = null;
                 access = false;
-                break;  //nie dziala
+                break;
         }
     }
 }
@@ -230,82 +227,74 @@ while (true)
 UserModel CreateUser()
 {
     UserModel user = new UserModel();
+    string msg, temp;
 
-    string msg = "Enter your first name: ";
-    Console.Write(msg);
-    user._firstName = ValidateUserModelInput(user, msg);
+    msg = "Enter your first name: ";
+    temp = ValidateStringInput(msg);
+    user._firstName = ValidateLetters(temp);
 
     msg = "Enter your last name: ";
-    Console.Write(msg);
-    user._lastName = ValidateUserModelInput(user, msg);
+    temp = ValidateStringInput(msg);
+    user._lastName = ValidateLetters(temp);
 
-    bool isDate;
-    do
-    {
-        Console.Write("Enter your date of birth (DD-MM-YYYY): ");
-        isDate = DateOnly.TryParse(Console.ReadLine(), out DateOnly dateOfBirth);
-        if (isDate)
-        {
-            user._dateOfBirth = dateOfBirth;
-        }
-    } while (!isDate);
+    msg = "Enter your date of birth (DD-MM-YYYY): ";
+    user._dateOfBirth = ValidateDateInput(msg);    
 
     msg = "Enter your email: ";
-    Console.Write(msg);
-    user._email = ValidateUserModelInput(user, msg); // todo regex maila
+    temp = ValidateStringInput(msg);
+    while(!ValidateEmail(temp))
+    {
+        Console.WriteLine("Wrong email address, try again.");
+        temp = ValidateStringInput(msg);
+    }
+    temp = temp.ToLower();
+    user._email = temp; // todo regex maila
 
-    msg = "Set your password: ";
-    Console.Write(msg);
-    user._password = SetPassword(); // todo walidacja hasła
+    temp = SetPassword();
+    while(!ValidatePassword(temp))
+    {
+        Console.Write("The password must contain at least one uppercase letter, one special" +
+            " character and one digit. Try again: ");
+        temp = SetPassword();
+    }
+    user._password = temp;
+    // todo walidacja hasła
 
     return user;
 }
 ValveModel CreateValve()
 {
     ValveModel valve = new ValveModel();
-    string temp;
-    do
-    {
-        Console.Write("Enter supplier name: ");
-        temp = Console.ReadLine();
+    string msg;
 
-        if (string.IsNullOrEmpty(temp))
-        {
-            Console.WriteLine("This field can not be empty");
-        }
-        else
-        {
-            valve._supplier = temp;
-        }
+    msg = "Enter supplier of valve: ";
+    valve._supplier = ValidateStringInput(msg);
 
-    } while (string.IsNullOrEmpty(temp));
+    msg = "Enter full name of valve: ";
+    valve._fullName = ValidateStringInput(msg);
 
-    Console.Write("Enter full name of valve: ");
-    valve._fullName = Console.ReadLine();
+    msg = "Enter short name of valve: ";
+    valve._shortName = ValidateStringInput(msg);
 
-    Console.Write("Enter short name of valve: ");
-    valve._shortName = Console.ReadLine();
+    msg = "Enter the tube lenght: ";
+    valve._tubeLenght = ValidateStringInput(msg);
 
-    Console.Write("Enter the tube lenght: ");
-    valve._tubeLenght = Console.ReadLine();
+    msg = "Enter the index of valve: ";
+    valve._index = ValidateStringInput(msg);
 
-    Console.Write("Enter the index of valve: ");
-    valve._index = Console.ReadLine();
+    msg = "Enter the date of acceptance: ";
+    valve._acceptanceDate = ValidateDateInput(msg);
 
-    Console.Write("Enter the date of acceptance: ");
-    valve._acceptanceDate = DateOnly.Parse(Console.ReadLine());
-
-    //Console.Write("Enter the date of expiration: ");
     valve._expiriationDate = valve._acceptanceDate.AddYears(2);
 
-    Console.Write("Enter the name destiny product: ");
-    valve._destiny = Console.ReadLine();
+    msg = "Enter the name destiny product: ";
+    valve._destiny = ValidateStringInput(msg);
 
-    Console.Write("Enter the amount of valves (must be a number): ");
-    valve._amount = int.Parse(Console.ReadLine());
+    msg = "Enter the amount of valves (must be a number): ";
+    valve._amount = ValidateIntInput(msg);
 
-    Console.Write("Enter the number of storage place: ");
-    valve._storagePlace = Console.ReadLine();
+    msg = "Enter the number of storage place: ";
+    valve._storagePlace = ValidateStringInput(msg);
 
     valve._lastUpdate = DateTime.Now;
 
@@ -316,75 +305,81 @@ ValveModel CreateValve()
 CanModel CreateCan()
 {
     CanModel can = new CanModel();
+    string msg;
 
-    Console.Write("Enter supplier name: ");
-    can._supplier = Console.ReadLine();
+    msg = "Enter supplier name: ";
+    can._supplier = ValidateStringInput(msg);
 
-    Console.Write("Enter full name of can: ");
-    can._fullName = Console.ReadLine();
+    msg = "Enter full name of can: ";
+    can._fullName = ValidateStringInput(msg);
 
-    Console.Write("Enter short name of can: ");
-    can._shortName = Console.ReadLine();
+    msg = "Enter short name of can: ";
+    can._shortName = ValidateStringInput(msg);
 
-    Console.Write("Enter the index of can: ");
-    can._index = Console.ReadLine();
+    msg = "Enter the index of can: ";
+    can._index = ValidateStringInput(msg);
 
-    Console.Write("Enter the date of acceptance: ");
-    can._acceptanceDate = DateOnly.Parse(Console.ReadLine());
+    msg = "Enter the date of acceptance: ";
+    can._acceptanceDate = ValidateDateInput(msg);
 
-    Console.Write("Enter the date of expiration: ");
-    can._expiriationDate = DateOnly.Parse(Console.ReadLine());
+    can._expiriationDate = can._acceptanceDate.AddYears(2);
 
-    Console.Write("Enter the aount of cans (must be a number): ");
-    can._amount = int.Parse(Console.ReadLine());
+    msg = "Enter the amount of cans (must be a number): ";
+    can._amount = ValidateIntInput(msg);
 
-    Console.Write("Enter the number of storage place: ");
-    can._storagePlace = Console.ReadLine();
+    msg = "Enter the number of storage place: ";
+    can._storagePlace = ValidateStringInput(msg);
 
     can._lastUpdate = DateTime.Now;
 
     can._lastUser = userLogged;
 
     Console.Write("Enter the diameter of can: ");
-    can._diameter = Console.ReadLine();
+    can._diameter = ValidateStringInput(msg);
 
-    Console.Write("Enter height of can: ");
-    can._height = Console.ReadLine();
+    msg = "Enter height of can: ";
+    can._height = ValidateStringInput(msg);
     
-    Console.WriteLine("Enter type of internal varnish of a can: ");
-    can._typeOfInternalVarnish = Console.ReadLine();
+    msg = "Enter type of internal varnish of a can: ";
+    can._typeOfInternalVarnish = ValidateStringInput(msg);
 
     return can;
 }
 static string SetPassword()
 {
     var password = new StringBuilder();
-    string psw = "";
-    while (true)
+    do
     {
-        ConsoleKeyInfo i = Console.ReadKey(true);
-        if (i.Key == ConsoleKey.Enter)
+        Console.Write("Set your password: ");
+        while (true)
         {
-            break;
-        }
-        else if (i.Key == ConsoleKey.Backspace)
-        {
-            if(password.Length > 0)
+            ConsoleKeyInfo i = Console.ReadKey(true);
+            if (i.Key == ConsoleKey.Enter)
             {
-                password.Remove(password.Length - 1, 1);
-                Console.Write("\b \b");
+                break;
+            }
+            else if (i.Key == ConsoleKey.Backspace)
+            {
+                if (password.Length > 0)
+                {
+                    password.Remove(password.Length - 1, 1);
+                    Console.Write("\b \b");
+                }
+            }
+            else
+            {
+                password.Append(i.KeyChar);
+                Console.Write("*");
             }
         }
-        else
+        if (string.IsNullOrEmpty(password.ToString()))
         {
-            password.Append(i.KeyChar);
-            Console.Write("*");
+            Console.Clear();
+            Console.WriteLine("Password can not be empty! Try again: ");
         }
-        psw = password.ToString();
-    }
+    } while (string.IsNullOrEmpty(password.ToString()));
 
-    return psw;
-
+    return password.ToString();
 }
 async void UsersDisplay()
 {
@@ -448,8 +443,9 @@ async void CansDisplay()
 
     Console.WriteLine("Please type enter key to continue");
 }
-static string ValidateUserModelInput(UserModel user, string msg)
+static string ValidateStringInput(string msg)
 {
+    Console.Write(msg);
     string temp = Console.ReadLine();
 
     while(string.IsNullOrEmpty(temp))
@@ -459,6 +455,130 @@ static string ValidateUserModelInput(UserModel user, string msg)
         Console.Write(msg);
         temp = Console.ReadLine();
     }
-    return user._firstName = temp;
+    return temp;
+}
+static int ValidateIntInput(string msg)
+{
+    Console.Write(msg);
+    bool isNumber = int.TryParse(Console.ReadLine(), out int temp);
+
+    while (!isNumber || temp < 0)
+    {
+        Console.Clear();
+        Console.WriteLine("This field can not be empty or less than zero. Try again!");
+        Console.Write(msg);
+        isNumber = int.TryParse(Console.ReadLine(), out temp);
+    }
+    return temp;
+}
+static DateOnly ValidateDateInput(string msg)
+{
+    Console.Write(msg);
+    bool isDate = DateOnly.TryParse(Console.ReadLine(), out DateOnly temp);
+
+    while (!isDate)
+    {
+        Console.Clear();
+        Console.WriteLine("This field can not be empty and must be in correct format" +
+            " (DD-MM-YYYY). Try again!");
+        Console.Write(msg);
+        isDate = DateOnly.TryParse(Console.ReadLine(), out temp);
+    }
+    return temp;
+}
+static string ValidateLetters(string input)
+{
+    StringBuilder sb = new StringBuilder();
+    for (int i = 0; i < input.Length; i++)
+    {
+        if (i == 0)
+        {
+            sb.Append(char.ToUpper(input[i]));
+        }
+        else
+        {
+            sb.Append(char.ToLower(input[i]));
+        }
+    }
+    return sb.ToString();
+}
+static bool ValidatePassword(string password)
+{
+    bool isCapital = false;
+    bool isSpecial = false;
+    bool isNumber = false;
+
+    foreach (char c in password)
+    {
+        if (char.IsLetter(c) && char.IsUpper(c))
+        {
+            isCapital = true;
+        }
+        else if(c == '!' || c == '@' || c == '#' || c == '$' || c == '%' || c == '^' || c == '&'
+            || c == '*' || c == '(' || c == ')')
+        {
+            isSpecial = true;
+        }
+        else if(char.IsNumber(c))
+        {
+            isNumber = true;
+        }
+    }
+    if (isCapital == true && isSpecial == true && isNumber == true)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+static bool ValidateEmail(string email)
+{
+    bool isAt = false;
+    bool dotPosition = true;
+    int atIndex = email.IndexOf('@');
+
+    foreach(char c in email)
+    {
+        // Sprawdzenie czy input zawiera znak '@' i czy nie znajduje sie on na poczatku ani
+        // koncu adresu email
+        if (c == '@')
+        {
+            if ((email.IndexOf(c) != 0) && (email.IndexOf(c) != email.Length - 1))
+            {
+                isAt = true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        // Sprawdzenie czy bezposrednio po znaku '@' znajduje sie kropka
+        if ((email.IndexOf(c) == atIndex + 1) && c == '.')
+        {
+            return false;
+        }
+        // Sprawdzenie czy po znaku '@' wystepuje podciag zawieracjacy kropke
+        if (c == '@' && !email.Substring(email.IndexOf("@")).Contains("."))
+        {
+            return false;
+        }
+        // Sprawdzenie czy kropka znajduje sie na poczatku lub koncu adresu email
+        int index = email.IndexOf(c);
+        if (email.IndexOf(c) == 0 || email.IndexOf(c) == email.Length -1)
+        {
+            return false;
+        }
+    }
+
+    if(isAt == true && dotPosition == true)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 #endregion
