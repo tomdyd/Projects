@@ -1,7 +1,5 @@
 ﻿using MongoDB.Driver;
 using StoreDataAccess.Models;
-using System;
-using System.Text;
 
 namespace StoreDataAccess.DataAccess;
 public class DataAccess
@@ -36,21 +34,22 @@ public class DataAccess
         }
         
     }
-    private bool UserExists(string userName)
-    {
-        var userCollection = ConnectToMongo<UserModel>(_userCollection);
-        var filter = Builders<UserModel>.Filter.Eq(u => u._email, userName);
-        var user = userCollection.Find(filter).FirstOrDefault();
-        return user != null;
-    }
     public Task CreateValve(ValveModel valve)
-    {   
+    {
         var valveCollection = ConnectToMongo<ValveModel>(_valveCollection);
+
+        Console.WriteLine("\nValve has been created successfully!");
+        Console.ReadKey();
+
         return valveCollection.InsertOneAsync(valve);
     }
     public Task CreateCan(CanModel can)
     {
         var canCollection = ConnectToMongo<CanModel>(_canCollection);
+
+        Console.WriteLine("\nCan has been created successfully!");
+        Console.ReadKey();
+
         return canCollection.InsertOneAsync(can);
     }
     public async Task<List<UserModel>> GetAllUsers()
@@ -58,35 +57,41 @@ public class DataAccess
         var userCollection = ConnectToMongo<UserModel>(_userCollection);
         var results = await userCollection.FindAsync(_ => true);
         return results.ToList();
-    }
+    }// Funkcja potrzebna poza zaliczeniem zadania
     public async Task<List<UserModel>> GetUsers(string email)
     {
         var userCollection = ConnectToMongo<UserModel>(_userCollection);
         var results = await userCollection.FindAsync(x => x._email == email);
         return results.ToList();
-    }
+    }// Funkcja potrzebna poza zaliczeniem zadania
     public async Task<List<ValveModel>> GetAllValves()
     {
         var valvesCollection = ConnectToMongo<ValveModel>(_valveCollection);
         var results = await valvesCollection.FindAsync(_ => true);
         return results.ToList();
-    }
-    public async Task<List<ValveModel>> GetAllValvesByUser(UserModel user)
+    }// Funkcja potrzebna poza zaliczeniem zadania
+    public async Task<List<ValveModel>> GetValvesByUser(UserModel? user)
     {
         var valvesCollection = ConnectToMongo<ValveModel>(_valveCollection);
         var results = await valvesCollection.FindAsync(x => x._lastUser._email == user._email);
         return results.ToList();
-    }
-    public async Task<List<ValveModel>> GetAllValvesByIndex(string index)
+    }// Funkcja potrzebna poza zaliczeniem zadania
+    public async Task<List<ValveModel>> GetValvesByIndex(string index)
     {
         var valvesCollection = ConnectToMongo<ValveModel>(_valveCollection);
         var results = await valvesCollection.FindAsync(x => x._index == index);
         return results.ToList();
-    }
+    }// Funkcja potrzebna poza zaliczeniem zadania
     public async Task<List<CanModel>> GetAllCans()
     {
         var canCollection = ConnectToMongo<CanModel>(_canCollection);
         var results = await canCollection.FindAsync(_ => true);
+        return results.ToList();
+    }// Funkcja potrzebna poza zaliczeniem zadania
+    public async Task<List<CanModel>> GetCansByUser(UserModel? user)
+    {
+        var cansCollection = ConnectToMongo<CanModel>(_canCollection);
+        var results = await cansCollection.FindAsync(x => x._lastUser._email == user._email);
         return results.ToList();
     }
     public Task UpdateUserByUserName(string email, UserModel user)
@@ -106,20 +111,7 @@ public class DataAccess
             user._id = oldId;
             return userCollection.ReplaceOneAsync(filter, user);
         }
-    } // todo informacja o nadpisaniu obiektu
-    public bool FindValveByIndex(string index)
-    {
-        var valveCollection = ConnectToMongo<ValveModel>(_valveCollection);
-        var filter = Builders<ValveModel>.Filter.Eq(i => i._index, index);
-        var valve = valveCollection.Find(filter).FirstOrDefault();
-
-        if (valve == null)
-        {
-            return false;
-        }
-        else
-            return true;
-    }
+    }// Funkcja potrzebna poza zaliczeniem zadania
     public Task UpdateValveByIndex(ValveModel valve, string index)
     {
         var valveCollection = ConnectToMongo<ValveModel>(_valveCollection);
@@ -136,9 +128,13 @@ public class DataAccess
         {
             var oldId = OldValve._id;
             valve._id = oldId;
+
+            Console.WriteLine("\nValve has been updated successfully!");
+            Console.ReadKey();
+
             return valveCollection.ReplaceOneAsync(filter, valve);
         }
-    } // todo informacja o nadpisaniu obiektu
+    }
     public Task UpdateCanByIndex(CanModel can, string index)
     {
         var canCollection = ConnectToMongo<CanModel>(_canCollection);
@@ -154,9 +150,13 @@ public class DataAccess
         {
             var oldId = oldCan._id;
             can._id = oldId;
+
+            Console.WriteLine("\nCan has been updated successfully!");
+            Console.ReadKey();
+
             return canCollection.ReplaceOneAsync(filter, can);
         }
-    } // todo informacja o nadpisaniu obiektu
+    }
     public Task DeleteUserByUserName(string email)
     {
         var userCollection = ConnectToMongo<UserModel>(_userCollection);
@@ -172,7 +172,7 @@ public class DataAccess
         {
             return userCollection.DeleteOneAsync(filter);
         }
-    } // todo informacja o usunięciu obiektu
+    }// Funkcja potrzebna poza zaliczeniem zadania
     public Task DeleteValveByIndex(string index) 
     {
         var valveCollection = ConnectToMongo<ValveModel>(_valveCollection);
@@ -186,9 +186,11 @@ public class DataAccess
         }
         else
         {
+            Console.WriteLine("\nValve has been deleted successfully!");
+            Console.ReadKey();
             return valveCollection.DeleteOneAsync(filter);
         }
-    } // todo informacja o usunięciu obiektu
+    }
     public Task DeleteCanByIndex(string index)
     {
         var canCollection = ConnectToMongo<CanModel>(_canCollection);
@@ -202,9 +204,48 @@ public class DataAccess
         }
         else
         {
+            Console.WriteLine("\nCan has been deleted successfully!");
+            Console.ReadKey();
             return canCollection.DeleteOneAsync(filter);
         }
-    } // todo informacja o usunięciu obiektu
+    }
+    public bool FindValveByIndex(string index)
+    {
+        var valveCollection = ConnectToMongo<ValveModel>(_valveCollection);
+        var filter = Builders<ValveModel>.Filter.Eq(i => i._index, index);
+        var valve = valveCollection.Find(filter).FirstOrDefault();
+
+        if (valve == null)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+    public bool FindCanByIndex(string index)
+    {
+        var canCollection = ConnectToMongo<CanModel>(_canCollection);
+        var filter = Builders<CanModel>.Filter.Eq(i => i._index, index);
+        var can = canCollection.Find(filter).FirstOrDefault();
+
+        if (can == null)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+    private bool UserExists(string userName)
+    {
+        var userCollection = ConnectToMongo<UserModel>(_userCollection);
+        var filter = Builders<UserModel>.Filter.Eq(u => u._email, userName);
+        var user = userCollection.Find(filter).FirstOrDefault();
+        return user != null;
+    }
     public UserModel Login(string email, string password)
     {
         var userCollection = ConnectToMongo<UserModel>(_userCollection);
@@ -219,7 +260,7 @@ public class DataAccess
         else
         {
             return null;
-        }        
+        }
     }
 
 }

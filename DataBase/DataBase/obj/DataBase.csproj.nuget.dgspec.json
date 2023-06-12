@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Dane\\gitRepositories\\Projects\\DataBase\\DataBase\\DataBase.csproj": {}
+    "D:\\gitRepositories\\Projects\\DataBase\\DataBase\\DataBase.csproj": {}
   },
   "projects": {
-    "D:\\Dane\\gitRepositories\\Projects\\DataBase\\DataBase\\DataBase.csproj": {
+    "D:\\gitRepositories\\Projects\\DataBase\\DataBase\\DataBase.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Dane\\gitRepositories\\Projects\\DataBase\\DataBase\\DataBase.csproj",
+        "projectUniqueName": "D:\\gitRepositories\\Projects\\DataBase\\DataBase\\DataBase.csproj",
         "projectName": "DataBase",
-        "projectPath": "D:\\Dane\\gitRepositories\\Projects\\DataBase\\DataBase\\DataBase.csproj",
+        "projectPath": "D:\\gitRepositories\\Projects\\DataBase\\DataBase\\DataBase.csproj",
         "packagesPath": "C:\\Users\\Tomek\\.nuget\\packages\\",
-        "outputPath": "D:\\Dane\\gitRepositories\\Projects\\DataBase\\DataBase\\obj\\",
+        "outputPath": "D:\\gitRepositories\\Projects\\DataBase\\DataBase\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Tomek\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Dane\\gitRepositories\\Projects\\DataBase\\StoreDataAccess\\StoreDataAccess.csproj": {
-                "projectPath": "D:\\Dane\\gitRepositories\\Projects\\DataBase\\StoreDataAccess\\StoreDataAccess.csproj"
+              "D:\\gitRepositories\\Projects\\DataBase\\StoreDataAccess\\StoreDataAccess.csproj": {
+                "projectPath": "D:\\gitRepositories\\Projects\\DataBase\\StoreDataAccess\\StoreDataAccess.csproj"
               }
             }
           }
@@ -59,18 +59,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Dane\\gitRepositories\\Projects\\DataBase\\StoreDataAccess\\StoreDataAccess.csproj": {
+    "D:\\gitRepositories\\Projects\\DataBase\\StoreDataAccess\\StoreDataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Dane\\gitRepositories\\Projects\\DataBase\\StoreDataAccess\\StoreDataAccess.csproj",
+        "projectUniqueName": "D:\\gitRepositories\\Projects\\DataBase\\StoreDataAccess\\StoreDataAccess.csproj",
         "projectName": "StoreDataAccess",
-        "projectPath": "D:\\Dane\\gitRepositories\\Projects\\DataBase\\StoreDataAccess\\StoreDataAccess.csproj",
+        "projectPath": "D:\\gitRepositories\\Projects\\DataBase\\StoreDataAccess\\StoreDataAccess.csproj",
         "packagesPath": "C:\\Users\\Tomek\\.nuget\\packages\\",
-        "outputPath": "D:\\Dane\\gitRepositories\\Projects\\DataBase\\StoreDataAccess\\obj\\",
+        "outputPath": "D:\\gitRepositories\\Projects\\DataBase\\StoreDataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Tomek\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -124,7 +124,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
