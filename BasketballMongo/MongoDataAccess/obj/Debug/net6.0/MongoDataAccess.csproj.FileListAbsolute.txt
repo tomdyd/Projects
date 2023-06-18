@@ -1,0 +1,12 @@
+D:\gitRepositories\Projects\BasketballMongo\MongoDataAccess\bin\Debug\net6.0\MongoDataAccess.deps.json
+D:\gitRepositories\Projects\BasketballMongo\MongoDataAccess\bin\Debug\net6.0\MongoDataAccess.dll
+D:\gitRepositories\Projects\BasketballMongo\MongoDataAccess\bin\Debug\net6.0\MongoDataAccess.pdb
+D:\gitRepositories\Projects\BasketballMongo\MongoDataAccess\obj\Debug\net6.0\MongoDataAccess.csproj.AssemblyReference.cache
+D:\gitRepositories\Projects\BasketballMongo\MongoDataAccess\obj\Debug\net6.0\MongoDataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\gitRepositories\Projects\BasketballMongo\MongoDataAccess\obj\Debug\net6.0\MongoDataAccess.AssemblyInfoInputs.cache
+D:\gitRepositories\Projects\BasketballMongo\MongoDataAccess\obj\Debug\net6.0\MongoDataAccess.AssemblyInfo.cs
+D:\gitRepositories\Projects\BasketballMongo\MongoDataAccess\obj\Debug\net6.0\MongoDataAccess.csproj.CoreCompileInputs.cache
+D:\gitRepositories\Projects\BasketballMongo\MongoDataAccess\obj\Debug\net6.0\MongoDataAccess.dll
+D:\gitRepositories\Projects\BasketballMongo\MongoDataAccess\obj\Debug\net6.0\refint\MongoDataAccess.dll
+D:\gitRepositories\Projects\BasketballMongo\MongoDataAccess\obj\Debug\net6.0\MongoDataAccess.pdb
+D:\gitRepositories\Projects\BasketballMongo\MongoDataAccess\obj\Debug\net6.0\ref\MongoDataAccess.dll
