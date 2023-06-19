@@ -1,0 +1,118 @@
+@use 'config' as *;
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: $primaryColor;
+  color: $secondaryColor;
+  padding: 20px;
+
+  @media (min-width: $breakpoint) {
+    position: relative;
+    background: linear-gradient(to right, $primaryColor 0 35%, $secondaryColor 35% 100%);
+    padding: 20px 0 20px 35%;
+    min-height: 240px;
+    color: $primaryColor;
+  }
+
+  &__name {
+    order: 2;
+    margin: 20px 0 10px 0;
+    font-weight: normal;
+    font-size: 3rem;
+    letter-spacing: 0.1em;
+
+    @media (min-width: $breakpoint) {
+      margin: 0 20px 10px 20px;
+    }
+
+    b {
+      font-weight: bold;
+    }
+  }
+
+  &__title {
+    order: 3;
+    margin: 0 0 20px 0;
+    font-size: 1.5rem;
+    letter-spacing: 0.2em;
+    font-weight: normal;
+
+    @media (min-width: $breakpoint) {
+      margin: 0 20px 20px 20px;
+    }
+  }
+
+  &__description {
+    order: 4;
+    margin: 0;
+
+    @media (min-width: $breakpoint) {
+      margin: 0 20px;
+      color: $ternaryColor;
+    }
+  }
+
+  &__picture {
+    order: 1;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+
+    @media (min-width: $breakpoint) {
+      position: absolute;
+      left: 17.5%;
+      top: 50%;
+      margin: -100px 0 0 -100px;
+    }
+
+    &-image {
+      height: 100%;
+      width: auto;
+      margin-left: -10px;
+    }
+  }
+}
+.personalData {
+  @media (min-width: $breakpoint) {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+
+    padding: 20px 20px 0 20px;
+  }
+}
+
+.jobHistory {
+  @media (min-width: $breakpoint) {
+    display: flex;
+    flex-direction: column;
+    color: $primaryColor;
+    width: 75%;
+    margin: 30px 0 0 0;
+  }
+}
+
+.main{
+  @media (min-width: $breakpoint){
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, $primaryColor 0 35%, $secondaryColor 35% 100%);
+    color: $secondaryColor;
+  }
+}
+
+.footer {
+  @media (min-width: $breakpoint) {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, $primaryColor 0 35%, $secondaryColor 35% 100%);
+    color: $secondaryColor;
+  }
+}

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0">
+    <title>CV</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.2.96/css/materialdesignicons.min.css" integrity="sha512-LX0YV/MWBEn2dwXCYgQHrpa9HJkwB+S+bnBpifSOTO1No27TqNMKYoAn6ff2FBh03THAzAiiCwQ+aPX+/Qt/Ow==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="/src/sass/styles.scss">
+    <script type="module" src="/src/js/main.js"></script>
+</head>
+<body>
+
+<header id="start">
+    <h1>Curriculum Vitae</h1>
+    <nav>
+        <button id="toggle-menu" class="mdi mdi-menu"></button>
+        <ul id="menu">
+            <li>
+                <a href="#start" title="Back to top">Start</a>
+            </li>
+            <li>
+                <a href="#contact" title="Go to contact details">Contact</a>
+            </li>
+            <li>
+                <a href="#education" title="See education track">Education</a>
+            </li>
+            <li>
+                <a href="#expertise" title="Know expertise">Expertise</a>
+            </li>
+            <li>
+                <a href="#experience" title="See experience track">Experience</a>
+            </li>
+            <li>
+                <a href="#reference" title="Check references">Reference</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <header class="header">
+        <h1 class="header__name"><b>Elon</b> Musk</h1>
+        <h2 class="header__title">Engineer or kind of</h2>
+        <p class="header__description">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias animi cumque delectus doloremque laboriosam maiores minima neque nisi nobis, officia perferendis praesentium qui rem velit. Illum ipsam natus vel?
+        </p>
+        <div class="header__picture">
+            <img
+                class="header__picture-image"
+                src="/img/profile-photo.jpg"
+                alt="Photo of Elon Musk smiling"
+                title="Photo of Elon Musk smiling"
+                width="200"
+                height="151"
+            >
+        </div>
+    </header>
+
+  <div class="main">
+    <div id="personalData" class="info personalData">
+        <section id="contact" class="info__contact">
+            <header class="info__header">
+                <h1>Contact</h1>
+            </header>
+
+            <address class="info__contact-address">
+                <ul class="info__contact-address-list">
+                    <li>
+                        <h2 class="info__contact-address-list-item-label">Phone</h2>
+                        <a class="info__contact-address-list-item-value info__contact-address-list-item-value--phone" href="tel:+48500500500" title="Get in touch by phone">+48 500 500 500</a>
+                    </li>
+                    <li>
+                        <h2 class="info__contact-address-list-item-label">E-mail</h2>
+                        <a class="info__contact-address-list-item-value info__contact-address-list-item-value--email" href="mailto:musk@tesla.com" title="Get in touch by e-mail">musk@tesla.com</a>
+                    </li>
+                    <li>
+                        <h2 class="info__contact-address-list-item-label">Address</h2>
+                        <a class="info__contact-address-list-item-value info__contact-address-list-item-value--address" href="https://goo.gl/maps/uwmwmgENzJ2ew8yC6" target="_blank" title="See where it is located">
+                            <ul>
+                                <li>ul. Arciszewskiego 22b</li>
+                                <li>76-200 Słupsk</li>
+                            </ul>
+                        </a>
+                    </li>
+                </ul>
+            </address>
+        </section>
+
+        <section id="education" class="info__education">
+          <header class="info__header">
+          <h1>Education</h1>
+          </header>
+
+            <ul class="info__education-list">
+                <li>
+                    <ul class = "info__education-list">
+                        <li>2023+</li>
+                        <li>lunar landings</li>
+                        <li>High School of Lunarship</li>
+                    </ul>
+                </li>
+                <li class>
+                    <ul class="info__education-list">
+                        <li>2000 - 2010</li>
+                        <li>electricity degree</li>
+                        <li>Autonomous School of Driving</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section id="expertise" class="info__expertise">
+          <header class="info__header">
+            <h1>Expertise</h1>
+          </header>
+            <ul class="info__expertise-list">
+                <li>electric cars</li>
+                <li>boring holes</li>
+                <li>flamethrowers</li>
+                <li>space exploration</li>
+                <li>...</li>
+            </ul>
+        </section>
+
+        <section id="languages" class="info__languages">
+          <header class="info__header">
+          <h1>Languages</h1>
+          </header>
+            <ul class="info__languages-list">
+                <li class="info__languages-list-item">US English</li>
+                <li class="info__languages-list-item">Klingon</li>
+            </ul>
+        </section>
+    </div>
+
+    <div id="job-history " class="jobHistory">
+        <section id="experience" class="info__experience">
+          <header class="info__header-color">
+            <h1>Experience</h1>
+          </header>
+            <ul class="info__experience-list">
+                <li>
+                    <h2>
+                        <span>2021 - 2022</span>
+                        <span>Tesla</span>
+                        <strong>CEO</strong>
+                    </h2>
+                    <p class="info__experience-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur consequuntur deserunt dolor eveniet fugiat incidunt ipsam maxime nihil.</p>
+                </li>
+                <li class="experience__item">
+                    <h2>
+                        <span>2019 - 2023</span>
+                        <span>The Boring Company</span>
+                        <strong>CEO</strong>
+                    </h2>
+                    <p class="info__experience-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </li>
+                <li class="experience__item">
+                    <h2>
+                        <span>1999 - 2005</span>
+                        <span>PayPal</span>
+                        <strong>CEO</strong>
+                    </h2>
+                    <p class="info__experience-text">Consectetur adipisicing elit. Aspernatur consequuntur deserunt dolor eveniet fugiat.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="reference" class="info__reference">
+          <header class="info__header-color">
+            <h1>Reference</h1>
+          </header>
+
+          <div class="info__reference-list">
+            <div class="info__reference-list-block">
+                <h2>John Doe <span>CEO, PayPal</span></h2>
+                <ul>
+                    <li>phone: +48 500500500</li>
+                    <li>e-mail: email@example.com</li>
+                </ul>
+            </div>
+            <div class="info__reference-list-block">
+                <h2>John Doe <span>CEO, PayPal</span></h2>
+                <ul>
+                    <li>phone: +48 500500500</li>
+                    <li>e-mail: email@example.com</li>
+                </ul>
+            </div>
+          </div>
+        </section>
+    </div>
+  </div>
+</main>
+
+<footer class="footer__text">
+    <p>Personal data... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa esse et maxime omnis vero? Ab commodi dolores error eum explicabo fugiat iusto molestias reprehenderit sint? Dignissimos enim error laudantium totam.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+@use 'config' as *;
+
+:root {
+  color: $primaryColor;
+  font-family: $font;
+  box-sizing: border-box;
+  font-size: 87.5%;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+a {
+  color: $ternaryColor;
+
+  &:hover {
+    @media (min-width: $breakpoint) {
+      text-decoration: none;
+    }
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

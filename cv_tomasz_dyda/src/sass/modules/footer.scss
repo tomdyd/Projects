@@ -1,0 +1,11 @@
+@use 'config' as *;
+
+.footer {
+
+  &__text {
+    padding: 0 0 20px 20px;
+    @media (min-width: $breakpoint) {
+      padding: 0;
+    }
+  }
+}

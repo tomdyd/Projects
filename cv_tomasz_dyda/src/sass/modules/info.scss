@@ -1,0 +1,202 @@
+@use 'config' as *;
+
+.info {
+  &__header {
+    font-size: 1rem;
+    border-bottom: 1px solid $primaryColor;
+    @media (min-width: $breakpoint) {
+      border-bottom: 1px solid $secondaryColor;
+      &-color{
+        border-bottom: 1px solid $primaryColor;
+      }
+    }
+    &-color{
+      border-bottom: 1px solid $primaryColor;
+    }
+  }
+
+  &__contact {
+    padding: 20px;
+
+    &-address {
+      font-style: normal;
+
+      &-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        @media(min-width: $breakpoint) {
+          li {
+            a {
+              color: $secondaryColor;
+            }
+          }
+        }
+
+        &-item {
+          @media  (min-width: $breakpoint) {
+            a{
+              color: $secondaryColor;
+            }
+          &-label {
+            font-size: 1rem;
+            margin: 20px 0 0 0;
+            }
+          }
+
+          &-value {
+            display: flex;
+            flex-direction: row;
+
+
+            ul {
+              list-style: none;
+              margin: 0;
+              padding: 0;
+            }
+
+            &:before {
+              margin-right: 10px;
+              content: '';
+              display: block;
+              width: 20px;
+              height: 20px;
+              background: $primaryColor;
+              @media (min-width: $breakpoint){
+                background: $secondaryColor;
+              }
+            }
+
+            &--phone {
+              &:before {
+                mask-image: url('/img/icons/phone.svg');
+                -webkit-mask-image: url('/img/icons/phone.svg');
+              }
+            }
+
+            &--email {
+              &:before {
+                mask-image: url('/img/icons/email.svg');
+                -webkit-mask-image: url('/img/icons/email.svg');
+              }
+            }
+
+            &--address {
+              &:before {
+                mask-image: url('/img/icons/map-marker.svg');
+                -webkit-mask-image: url('/img/icons/map-marker.svg');
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__education {
+    padding: 0 20px 20px 20px;
+    margin: 0 0 0 0;
+
+    &-list {
+      margin: 20px 0 0 0;
+      padding: 0;
+      list-style: none;
+
+      &-item {
+        &-label {
+          margin: 20px 0 0 0;
+          list-style: none;
+        }
+      }
+    }
+  }
+
+  &__expertise{
+    padding: 0 20px 20px 20px;
+
+    &-list{
+      margin: 0 0 0 -20px;
+      padding: 0 20px 20px 40px;
+
+      li{
+        margin: 15px 0 0 0;
+      }
+    }
+  }
+
+  &__languages{
+    margin: -20px 0 0 0;
+    padding: 0 20px 20px 20px;
+
+    &-list{
+      padding: 0;
+      margin: 0;
+      list-style: none;
+
+      &-item{
+        margin: 15px 0 15px 0;
+      }
+    }
+  }
+
+  &__experience{
+    padding: 0 20px 0 20px;
+    margin: -10px 20px 0 0;
+    @media (min-width: $breakpoint) {
+      padding: 20px 0 0 20px;
+    }
+
+    &-text{
+      padding: 0 20px 20px 20px;
+      margin: 0 0 0 -20px;
+    }
+
+    &-list{
+
+      li {
+        padding: 10px 0 0 20px;
+        margin: 0 0 0 -36px;
+        list-style: none;
+        border-left: 1px solid $primaryColor;
+
+        &:before {
+          display: block;
+          width: 10px;
+          height: 10px;
+          background: $secondaryColor;
+          border: 2px solid $primaryColor;
+          border-radius: 50%;
+          margin: -10px 0 -35px -27px;
+          content: '';
+        }
+      }
+    }
+  }
+
+  &__reference{
+    margin: 0 0 0 0;
+    padding: 0 20px 0 20px;
+
+    @media (min-width: $breakpoint) {
+      margin: 405px 0 0 0;
+    }
+
+    &-list{
+      display: flex;
+      flex-direction: row;
+      li{
+        padding: 0;
+        margin: 0 0 0 -30px;
+        list-style: none;
+      }
+
+      &-block{
+        width: 100%;
+        padding: 0;
+      }
+    }
+  }
+}
+
+
